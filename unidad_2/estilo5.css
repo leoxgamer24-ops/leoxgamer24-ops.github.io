@@ -1,0 +1,145 @@
+.face{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: inherit;
+    font-size: 60Ppx;  
+    
+}
+.front{
+    background: rgba(90,90,90,0.7);
+    transform: translateZ(50px)
+}
+.back{
+    background: rgba(0,210,0,0.7);
+    transform: rotateY(180deg) translateZ(50px);
+}
+
+/* --- ESTILOS GENERALES Y MENÚ --- */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu {
+    width: 35%;
+    height: 75%;
+    font-size: 75%;
+    border: solid 1px black;    
+    background-color: skyblue;
+    /* Corrección en background-color */
+    transition: width 1.0s, height 1.0s, font-size 1.0s, background-color 1.0s;
+}
+
+.menu:hover {
+    width: 75%;
+    height: 125%;
+    font-size: 125%;
+    font-weight: bold;
+    background-color: crimson;
+}
+
+/* --- ANIMACIONES DE COLOR (ARCOÍRIS) --- */
+.rainbow, .arcoiris {
+    height: 150px;
+    width: 150px;
+    border: solid 2px black;
+    text-align: center;
+    vertical-align: middle; /* Para que esto funcione bien, deberías usar display: table-cell o flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes rgb {
+    0% { background-color: green; }
+    16% { background-color: yellow; }
+    33% { background-color: orange; }
+    50% { background-color: red; }
+    67% { background-color: purple; }
+    82% { background-color: blue; }
+    100% { background-color: green; }
+}
+
+.rainbow, .arcoiris {
+    animation-name: rgb;
+    animation-direction: normal;
+    animation-duration: 2.0s;
+    animation-delay: 0s; /* Quitamos el delay para que empiece de inmediato */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.rgb {
+    font-weight: bold;
+    font-size: 200%;
+    animation-name: rgb1;
+    animation-direction: normal;
+    animation-duration: 2.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rgb1 {
+    0% { color: green; }
+    16% { color: yellow; }
+    33% { color: orange; }
+    50% { color: red; }
+    67% { color: purple; }
+    82% { color: blue; }
+    100% { color: green; }
+}
+
+/* --- CUBO 3D Y ROTACIÓN --- */
+
+/* Contenedor de la escena para dar profundidad (perspectiva) */
+.scene {
+    width: 150px;
+    height: 150px;
+    perspective: 600px;
+    margin: 50px; /* Margen para que no se pegue arriba */
+}
+
+/* El elemento que girará */
+#element {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* CRUCIAL: Permite que los hijos existan en 3D */
+    animation: rotateCube 10s infinite linear; /* Animación de giro constante */
+}
+
+/* Animación de rotación del cubo */
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+}
+
+/* Estilos comunes para todas las caras */
+.face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Igual al tamaño de la escena */
+    height: 150px;
+    position: absolute;
+    backface-visibility: inherit;
+    font-size: 60px;
+    color: black;
+    border: 2px solid white; /* Borde blanco para distinguir las caras */
+    /* La opacidad se la daremos con rgba o con opacity si queremos ver a través */
+    opacity: 0.8; 
+}
+
+/* Posicionamiento de cada cara en el espacio 3D (Z = mitad del ancho/alto) */
+.front { transform: rotateY(0deg) translateZ(75px); }
+.back { transform: rotateY(180deg) translateZ(75px); }
+.right { transform: rotateY(90deg) translateZ(75px); }
+.left { transform: rotateY(-90deg) translateZ(75px); }
+.top { transform: rotateX(90deg) translateZ(75px); }
+.bottom { transform: rotateX(-90deg) translateZ(75px); }

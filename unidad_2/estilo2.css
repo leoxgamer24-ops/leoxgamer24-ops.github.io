@@ -1,0 +1,46 @@
+h1,h2{
+    
+    text-transform: uppercase;
+    text-align:center;
+    text-shadow: 2px 3px 5px grey;
+}
+p {
+    color: cornflowerblue;
+    background-color: black;
+    text-align: center
+}
+ol li:nth-child(2n) {
+    text-decoration-line: line-through;
+}
+ol li:hover {
+    font-size: xx-large;
+    color: cornflowerblue;
+}
+ol li:first-child {
+    font-size: x-large;
+}
+ol li:last-child {
+    font-size: x-large;
+}
+.lista_ordenada {
+    color: darkslategray;
+}
+.lista_ordenada li:nth-child(odd) {
+    background-color: antiquewhite;
+}
+.lista_ordenada li:nth-child(even) {
+    background-color: aquamarine;
+}
+#conFuente {
+    color: whitesmoke;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.cinzel {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
