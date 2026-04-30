@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manual de Combate - Lies of P</title>
+    
+    <!-- Fuentes personalizadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+    
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #712cf9;
+      }
+
+      body { 
+        padding-top: 80px; 
+        background-color: #0b0b0b; 
+        color: #e0e0e0; 
+        font-family: var(--font-body); 
+      }
+
+      h1, h2, h3, h4 { font-family: var(--font-titles); color: var(--accent); letter-spacing: 1px; }
+
+      .header-section { 
+        background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../../combate.jpg'); 
+        background-size: cover; 
+        padding: 100px 0; 
+        border-bottom: 2px solid var(--accent);
+      }
+
+      .legion-card {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 20px;
+        height: 100%;
+        transition: 0.3s;
+      }
+      .legion-card:hover { border-color: var(--accent); background: #1a1a1a; }
+      
+      .parry-box {
+        background: rgba(113, 44, 249, 0.1);
+        border: 1px solid var(--accent);
+        padding: 25px;
+        border-radius: 15px;
+      }
+
+      .weapon-type-badge {
+        background-color: var(--accent);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html"><img src="../../logo.ico" style="width: 45px"></a>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#">Sistemas de Combate</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="header-section text-center">
+        <div class="container">
+          <h1 class="display-3 fw-bold text-uppercase">Arte de la Guerra en Krat</h1>
+          <p class="lead">Domina cada mecánica para sobrevivir a la frenesí de las marionetas.</p>
+        </div>
+      </section>
+
+      <div class="container my-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2>Bloqueo Perfecto (Parry)</h2>
+                <div class="parry-box">
+                    <p>El **Parry** no es solo defensa, es tu mejor arma ofensiva. A diferencia de esquivar, un bloqueo perfecto:</p>
+                    <ul>
+                        <li><strong>Rompe el equilibrio:</strong> Acumula aturdimiento invisible en el jefe.</li>
+                        <li><strong>Destrucción de armas:</strong> Puede romper las espadas de los enemigos.</li>
+                        <li><strong>Cero Daño:</strong> No consumes vida, solo una pequeña cantidad de estamina.</li>
+                    </ul>
+                    <p class="small"><i>Consejo: Presiona el botón de guardia justo cuando el ataque esté por impactar, no antes.</i></p>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="../../parryP.gif" class="img-fluid rounded shadow-lg border border-secondary" alt="Mecánica de Parry">
+            </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <div class="row mb-5">
+            <div class="col-12 text-center mb-4">
+                <h2>Ensamblaje y Sinergia</h2>
+                <p>Las armas normales se dividen en dos partes que determinan tu eficacia.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="p-4 bg-dark rounded border h-100">
+                    <h4 class="text-info">La Hoja</h4>
+                    <p>Define el daño base, el alcance y las <strong>Artes de Fábula Ofensivas</strong>. Una hoja pesada en una empuñadura rápida puede ser letal, pero gastará más energía.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-4 bg-dark rounded border h-100">
+                    <h4 class="text-info">La Empuñadura</h4>
+                    <p>Define el <strong>Set de Movimientos</strong> y el escalado (Motricidad o Técnica). Puedes usar manivelas para ajustar el escalado a tu build favorita.</p>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <div class="alert alert-dark border-info">
+                    <strong>Armas de Jefes:</strong> Estas armas especiales (como la *Espada de Siete Resortes*) **NO** se pueden desmontar, pero poseen Artes de Fábula únicas y estadísticas superiores.
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center mb-4">Arsenal de Legión</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Fulminis</h5>
+                    <p class="small">Lanza descargas eléctricas. Vital contra marionetas.</p>
+                </div>
+            </div>
+            <!-- Brazo 2 -->
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Flamberge</h5>
+                    <p class="small">Lanzallamas continuo. El fuego es letal para las carcasas.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Puppet String</h5>
+                    <p class="small">Atrae enemigos o lánzate hacia ellos para ataques aéreos.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Nordiza (Aegis)</h5>
+                    <p class="small">Un escudo que explota al recibir impactos.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Deus Ex Machina</h5>
+                    <p class="small">Planta minas terrestres de proximidad.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Pandemónium</h5>
+                    <p class="small">Dispara ácido que corroe armaduras y enemigos humanos.</p>
+                </div>
+            </div>
+            <!-- Brazo 7 -->
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Falcon Eyes</h5>
+                    <p class="small">Dispara proyectiles explosivos a larga distancia.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="legion-card">
+                    <h5>Mano de Hierro</h5>
+                    <p class="small">El brazo básico. Un golpe de fuerza bruta pura.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
