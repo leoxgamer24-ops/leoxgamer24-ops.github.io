@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Desarrollo del Personaje - Lies of P</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root { --font-titles: 'Cinzel', serif; --font-body: 'Orbit', sans-serif; --p-blue: #00d4ff; }
+      body { padding-top: 80px; background-color: #0b0b0b; color: #e0e0e0; font-family: var(--font-body); }
+      h1, h2, h3 { font-family: var(--font-titles); color: var(--p-blue); }
+      .stat-card { background: #1a1a1a; border-left: 4px solid var(--p-blue); padding: 15px; margin-bottom: 10px; border-radius: 0 8px 8px 0; }
+      .humanity-box { background: linear-gradient(45deg, #1a1a1a, #2c1a3c); border: 1px solid #712cf9; padding: 25px; border-radius: 15px; }
+      .text-human { color: #ff6b6b; font-weight: bold; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html"><img src="../../logo.ico" style="width: 45px"></a>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link active" href="#">Desarrollo del Personaje</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-5">
+      <div class="row">
+        <div class="col-lg-7">
+          <h1 class="display-5 mb-4">Evolución de Atributos</h1>
+          <p>Mejorar a P requiere Ergo, que Sophia procesa para fortalecer tu cuerpo mecánico.</p>
+          
+          <div class="stat-card"><strong>Vitalidad:</strong> Aumenta los PS y la recuperación de guardia.</div>
+          <div class="stat-card"><strong>Vigor:</strong> Incrementa la estamina para atacar y esquivar.</div>
+          <div class="stat-card"><strong>Capacidad:</strong> Fundamental para cargar equipo pesado sin penalización.</div>
+          <div class="stat-card"><strong>Motricidad/Técnica:</strong> Define tu daño según el escalado del arma.</div>
+          
+          <img src="../../personajesP.jpg" class="img-fluid rounded mt-4 shadow" alt="P-Evolution">
+        </div>
+
+        <div class="col-lg-5">
+          <div class="humanity-box shadow-lg">
+            <h2 class="text-center">El Camino Humano</h2>
+            <p class="small text-center italic">"¿Puede una marioneta sentir amor?"</p>
+            <hr class="border-secondary">
+            
+            <h4 class="text-human">Mecánica de Mentiras</h4>
+            <p>Tus decisiones en Krat no solo cambian la historia, transforman a P. Mentir por compasión o proteger a otros te otorga <span class="text-human">Humanidad</span>.</p>
+            
+            <h4 class="text-human">El Gramófono</h4>
+            <p>Escuchar los discos de vinilo encontrados en Krat hace que tus resortes reaccionen, acercándote a la calidez humana.</p>
+            
+            <div class="alert alert-dark mt-4 border-secondary">
+              <strong>Efectos Visuales:</strong> A medida que te vuelves humano, el cabello de P crece y su interacción con los gatos cambia.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary mt-5">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame ·UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
