@@ -7,6 +7,12 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Astro v5.13.2" />
     <title>Carousel Template · Bootstrap v5.3</title>
+    
+    <!-- FUENTES DE GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/" />
     <script src="../assets/js/color-modes.js"></script>
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -16,7 +22,13 @@
       /* --- SOLUCIÓN DEL CARRUSEL --- */
       body {
         padding-top: 56px; 
+        font-family: 'Orbit', sans-serif; /* Fuente base */
       }
+      
+      h1, h2, h3, .nav-link, .navbar-brand {
+        font-family: 'Cinzel', serif; /* Fuente para títulos y navegación */
+      }
+
       .carousel-item {
         height: 65vh; 
         min-height: 400px;
@@ -107,7 +119,7 @@
     <header data-bs-theme="dark">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-                   <h1 class="float-md-start mb-0 cinzel-letra"><a href="../index.html"><img src="../logo.ico" style="width: 50px"></a></h1>
+          <h1 class="float-md-start mb-0 cinzel-letra"><a href="../index.html"><img src="../logo.ico" style="width: 50px"></a></h1>
 
           <button
             class="navbar-toggler"
@@ -127,9 +139,8 @@
             Generalidades
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Combate</a></li>
-            <li><a class="dropdown-item" href="#">Sistema de armas</a></li>
-            
+            <li><a class="dropdown-item" href="Generalidades/CombateContenido.html">Combate</a></li>
+            <li><a class="dropdown-item" href="Generalidades/CombateContenido.html">Sistema de armas</a></li>
             <li><a class="dropdown-item" href="#">Tips para el jugador</a></li>
           </ul>
         </li>
@@ -138,9 +149,8 @@
             Sobre el juego
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Desarrollo del personaje</a></li>
+            <li><a class="dropdown-item" href="Generalidades/Progreso.html">Desarrollo del personaje</a></li>
             <li><a class="dropdown-item" href="#">Progreso del juego</a></li>
-            
             <li><a class="dropdown-item" href="#">Historia de Krat</a></li>
           </ul>
         </li>
@@ -151,16 +161,15 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">DLC</a></li>
             <li><a class="dropdown-item" href="#">La secuela de lies of P</a></li>
-            
             <li><a class="dropdown-item" href="#">Galeria del juego</a></li>
           </ul>
         </li>
             </ul>
-            
           </div>
         </div>
       </nav>
     </header>
+
     <main>
       <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -180,8 +189,6 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active div-background" style="background-image: url(../personajesP.jpg)" >
-                      
-            
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1>Personajes</h1>
@@ -195,7 +202,6 @@
             </div>
           </div>
           
-          
           <div class="carousel-item div-background" style="background-image: url(../armasP.jpg)">
             <div class="container">
               <div class="carousel-caption">
@@ -203,13 +209,12 @@
                 <p>
                  Aquí podras ver exactamente como funcionan!
                 </p>
-                <p><a class="btn btn-lg btn-primary" href="#">Ver más</a></p>
+                <p><a class="btn btn-lg btn-primary" href="Generalidades/CombateContenido.html">Ver más</a></p>
               </div>
             </div>
           </div>
-                   <div class="carousel-item div-background" style="background-image: url(../combate.jpg)">
 
-
+          <div class="carousel-item div-background" style="background-image: url(../combate.jpg)">
             <div class="container">
               <div class="carousel-caption text-end">
                 <h1>Desarrollo del personaje y mecánicas</h1>
@@ -217,7 +222,7 @@
                   Órgano P, atributos, mentiras y Ergo, cómo funciona todo eso?
                 </p>
                 <p>
-                  <a class="btn btn-lg btn-primary" href="#">Ver más</a>
+                  <a class="btn btn-lg btn-primary" href="Generalidades/Progreso.html">Ver más</a>
                 </p>
               </div>
             </div>
@@ -242,11 +247,12 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-            <br><br><br>
+
+      <br><br><br>
 
       <div class="container marketing">
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-4 text-center">
            <img src="../peleacircular.jpg" style="border-radius: 50%; object-fit: cover; width: 175px; height: 175px">
             <h2 class="fw-normal">Combate y sistema de armas</h2>
             <p>
@@ -254,22 +260,21 @@
               brazos de legión, armas especiales y parry.
             </p>
             <p>
-              <a class="btn btn-secondary" href="#">Conocer más &raquo;</a>
+              <a class="btn btn-secondary" href="Generalidades/CombateContenido.html">Conocer más &raquo;</a>
             </p>
           </div>
-          <div class="col-lg-4">
-                       <img src="../carloP.jpg" style="border-radius: 50%; object-fit: cover; width: 175px; height: 175px">
+          <div class="col-lg-4 text-center">
+            <img src="../carloP.jpg" style="border-radius: 50%; object-fit: cover; width: 175px; height: 175px">
             <h2 class="fw-normal">Progresión y Desarrollo del personaje</h2>
             <p>
              Conoce como tus decisiones van influyendo en P, marioneta o humano?
             </p>
             <p>
-              <a class="btn btn-secondary" href="#">Quien es P? &raquo;</a>
+              <a class="btn btn-secondary" href="Generalidades/Progreso.html">Quien es P? &raquo;</a>
             </p>
           </div>
-          <div class="col-lg-4">
-                      <img src="../charactersP.jpg" style="border-radius: 50%; object-fit: cover; width: 175px; height: 175px">
-
+          <div class="col-lg-4 text-center">
+            <img src="../charactersP.jpg" style="border-radius: 50%; object-fit: cover; width: 175px; height: 175px">
             <h2 class="fw-normal">Personajes de la historia</h2>
             <p>
              Lies of P cuenta con un elenco oscuro y memorable basado 
@@ -279,8 +284,10 @@
               <a class="btn btn-secondary" href="#">Personajes mas importantes &raquo;</a>
             </p>
           </div>
-          </div>
+        </div>
+
         <hr class="featurette-divider" />
+        
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading fw-normal lh-1">
@@ -293,10 +300,11 @@
           </div>
           <div class="col-md-5">
             <iframe title="Lies of P" src="https://www.liesofp.com/es-es" width="400" height="350"></iframe>
-      
           </div>
         </div>
+
         <hr class="featurette-divider" />
+
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading fw-normal lh-1">
@@ -311,7 +319,9 @@
             <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@2playermx/video/7573505026899987730" data-video-id="7573505026899987730" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@2playermx" href="https://www.tiktok.com/@2playermx?refer=embed">@2playermx</a> 🩸 Lies of P tendrá secuela confirmada – ¡Y vienen 4 juegos más! <a title="videojuegos" target="_blank" href="https://www.tiktok.com/tag/videojuegos?refer=embed">#videojuegos</a> <a title="playstation" target="_blank" href="https://www.tiktok.com/tag/playstation?refer=embed">#playstation</a> <a title="liesofp" target="_blank" href="https://www.tiktok.com/tag/liesofp?refer=embed">#liesofp</a> <a title="soulslike" target="_blank" href="https://www.tiktok.com/tag/soulslike?refer=embed">#soulslike</a> <a target="_blank" title="♬ sonido original - 2playermx (ZAGA)" href="https://www.tiktok.com/music/sonido-original-7573505114067569416?refer=embed">♬ sonido original - 2playermx (ZAGA)</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
           </div>
         </div>
+
         <hr class="featurette-divider" />
+
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading fw-normal lh-1">
@@ -330,7 +340,9 @@
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
+
         <hr class="featurette-divider" />
+
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading fw-normal lh-1">
@@ -342,9 +354,12 @@
             </p>
           </div>
           <div class="col-md-5 order-md-1">
-<blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/r2WqgsKwv8">pic.twitter.com/r2WqgsKwv8</a></p>&mdash; Lies of P (@Liesofp) <a href="https://twitter.com/Liesofp/status/1836752350997827641?ref_src=twsrc%5Etfw">September 19, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>          </div>
+            <blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/r2WqgsKwv8">pic.twitter.com/r2WqgsKwv8</a></p>&mdash; Lies of P (@Liesofp) <a href="https://twitter.com/Liesofp/status/1836752350997827641?ref_src=twsrc%5Etfw">September 19, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
         </div>
+
         <hr class="featurette-divider" />
+
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading fw-normal lh-1">
@@ -377,7 +392,7 @@
       <footer class="container">
         <p class="float-end"><a href="#">Back to top</a></p>
         <p>
-          &copy; 2017–2025 Company, Inc. &middot;
+          &copy; 2017–2026 Leonardo Soto Adame &middot;
           <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
         </p>
       </footer>
