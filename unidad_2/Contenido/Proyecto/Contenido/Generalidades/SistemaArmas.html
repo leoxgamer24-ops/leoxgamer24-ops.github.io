@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistema de Armas - Lies of P</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #712cf9;
+        --gold: #d4af37;
+      }
+
+      body {
+        padding-top: 80px;
+        background-color: #0b0b0b;
+        color: #e0e0e0;
+        font-family: var(--font-body);
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: var(--font-titles);
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      .header-section {
+        background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('../../armasP.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 120px 0;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      .weapon-card {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 20px;
+        height: 100%;
+        transition: 0.3s;
+        border-radius: 10px;
+      }
+      .weapon-card:hover {
+        border-color: var(--accent);
+        background: #1a1a1a;
+        transform: translateY(-5px);
+      }
+
+      .weapon-icon {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+
+      .category-badge {
+        background-color: var(--accent);
+        color: white;
+        padding: 6px 18px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-family: var(--font-titles);
+      }
+
+      .stat-bar {
+        background: #222;
+        height: 8px;
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 4px 0 10px;
+      }
+      .stat-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #712cf9, #a855f7);
+      }
+
+      .scaling-box {
+        background: rgba(113, 44, 249, 0.08);
+        border: 1px solid var(--accent);
+        padding: 25px;
+        border-radius: 15px;
+      }
+
+      .scaling-grade {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 50%;
+        font-weight: bold;
+        font-family: var(--font-titles);
+        margin-right: 8px;
+      }
+      .grade-s { background: var(--gold); color: #000; }
+      .grade-a { background: #ff6b6b; color: white; }
+      .grade-b { background: #4ecdc4; color: white; }
+      .grade-c { background: #888; color: white; }
+      .grade-d { background: #444; color: white; }
+
+      .featured-weapon {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2c1a3c 100%);
+        border: 1px solid var(--accent);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+      }
+
+      table {
+        color: #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../../index.html"><img src="../../logo.ico" style="width: 45px"></a>
+         
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="header-section text-center">
+        <div class="container">
+          <span class="category-badge mb-3 d-inline-block">Generalidades</span>
+          <h1 class="display-2 fw-bold text-uppercase mt-3">Arsenal de Krat</h1>
+          <p class="lead">Cada arma es una extensión de tu alma mecánica. Conoce las hojas, empuñaduras y armas legendarias que forjan el destino de P.</p>
+        </div>
+      </section>
+
+      <div class="container my-5">
+
+        <!-- Introducción -->
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2>Forja tu Estilo</h2>
+            <p class="lead">Lies of P presenta uno de los sistemas de armas más flexibles del género souls-like. Con más de <strong>30 armas normales</strong> y <strong>13 armas de jefe</strong>, las combinaciones son prácticamente infinitas.</p>
+          </div>
+        </div>
+
+        <!-- Ensamblaje -->
+        <div class="featured-weapon">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <h2 class="display-6">⚙️ Sistema de Ensamblaje</h2>
+              <p>A diferencia de otros souls-like, en Lies of P puedes <strong>desmontar tus armas en dos piezas</strong> y combinarlas a voluntad:</p>
+              <ul>
+                <li><strong style="color: var(--gold);">Hoja:</strong> determina el daño base, alcance y Arte de Fábula ofensiva.</li>
+                <li><strong style="color: var(--gold);">Empuñadura:</strong> define el set de movimientos, peso y escalado.</li>
+              </ul>
+              <p>Esta libertad te permite crear armas únicas adaptadas a tu estilo de combate.</p>
+            </div>
+            <div class="col-lg-6 text-center">
+              <img src="../../armasP.jpg" class="img-fluid rounded shadow-lg border border-secondary" alt="Sistema de armas">
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Categorías de armas -->
+        <h2 class="text-center mb-5">Categorías de Armas Normales</h2>
+        <div class="row g-4 mb-5">
+          <div class="col-md-4">
+            <div class="weapon-card text-center">
+              <div class="weapon-icon">⚔️</div>
+              <h4>Espadas Cortas</h4>
+              <p class="small">Rápidas y ligeras. Ideales para esquivar y golpear con frecuencia. Escalan con <strong>Técnica</strong>.</p>
+              <p class="small text-secondary"><em>Ej: Espada de Salvador, Estoque de Krat</em></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="weapon-card text-center">
+              <div class="weapon-icon">🗡️</div>
+              <h4>Espadas Largas</h4>
+              <p class="small">Equilibrio perfecto entre daño y velocidad. Apropiadas para jugadores nuevos.</p>
+              <p class="small text-secondary"><em>Ej: Espada del Maestro, Hoja Aglaia</em></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="weapon-card text-center">
+              <div class="weapon-icon">⚒️</div>
+              <h4>Hachas y Mazos</h4>
+              <p class="small">Pesadas, lentas, devastadoras. Escalan con <strong>Motricidad</strong> y rompen guardias.</p>
+              <p class="small text-secondary"><em>Ej: Hacha de Carcaj, Gran Hacha</em></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="weapon-card text-center">
+              <div class="weapon-icon">🪓</div>
+              <h4>Armas Pesadas</h4>
+              <p class="small">Daño masivo por golpe. Requieren posicionamiento y predicción del enemigo.</p>
+              <p class="small text-secondary"><em>Ej: Daga del Cazador, Mazo de Krat</em></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="weapon-card text-center">
+              <div class="weapon-icon">🩸</div>
+              <h4>Armas de Sangrado</h4>
+              <p class="small">Aplican estados alterados. Ideal contra enemigos humanos y carcasas blindadas.</p>
+              <p class="small text-secondary"><em>Ej: Hoja Sangrienta, Sable de Espinas</em></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="weapon-card text-center">
+              <div class="weapon-icon">⚡</div>
+              <h4>Armas Elementales</h4>
+              <p class="small">Algunas tienen daño elemental innato: fuego, electricidad, ácido.</p>
+              <p class="small text-secondary"><em>Ej: Espada de Llama, Mazo Eléctrico</em></p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Escalado -->
+        <h2 class="text-center mb-4">Escalado de Atributos</h2>
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto">
+            <div class="scaling-box">
+              <p>Cada arma escala con uno o varios atributos. La eficacia se mide con grados de la <strong>S</strong> (mejor) a la <strong>D</strong> (peor):</p>
+              <div class="d-flex flex-wrap gap-2 my-3">
+                <span><span class="scaling-grade grade-s">S</span> Excelente (+50%)</span>
+                <span><span class="scaling-grade grade-a">A</span> Muy bueno (+30%)</span>
+                <span><span class="scaling-grade grade-b">B</span> Bueno (+20%)</span>
+                <span><span class="scaling-grade grade-c">C</span> Normal (+10%)</span>
+                <span><span class="scaling-grade grade-d">D</span> Bajo (+5%)</span>
+              </div>
+              <p class="mb-0"><strong>Atributos relevantes:</strong> Motricidad (fuerza física), Técnica (precisión), Avance (capacidad elemental).</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Armas legendarias -->
+        <h2 class="text-center mb-4">Armas de Jefe Legendarias</h2>
+        <p class="text-center text-secondary mb-5">Obtenidas tras derrotar a un jefe usando su Ergo especial. No se pueden desmontar pero poseen Artes de Fábula únicas.</p>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="weapon-card">
+              <h4>🌹 Espada de Siete Resortes</h4>
+              <p>Una espada con apariencia delicada pero letal. Activa siete cortes consecutivos como Arte de Fábula.</p>
+              <small>Atributo: <span class="scaling-grade grade-a">A</span> Técnica</small>
+              <div class="mt-3">
+                <small>Daño físico</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 75%"></div></div>
+                <small>Velocidad</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="weapon-card">
+              <h4>⚡ Espada del Trueno Real</h4>
+              <p>Arma cargada con electricidad permanente. Devastadora contra marionetas debido a su debilidad eléctrica.</p>
+              <small>Atributo: <span class="scaling-grade grade-b">B</span> Motricidad + Avance</small>
+              <div class="mt-3">
+                <small>Daño eléctrico</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 90%"></div></div>
+                <small>Peso</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 60%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="weapon-card">
+              <h4>🔥 Hacha del Frenesí</h4>
+              <p>Hacha enorme con cuchilla de obsidiana ardiente. Cada golpe puede aplicar quemadura prolongada.</p>
+              <small>Atributo: <span class="scaling-grade grade-s">S</span> Motricidad</small>
+              <div class="mt-3">
+                <small>Daño físico</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
+                <small>Velocidad</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 30%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="weapon-card">
+              <h4>🌑 Daga de la Mentira</h4>
+              <p>Daga oculta forjada con los recuerdos perdidos de P. Aumenta su daño con cada mentira dicha.</p>
+              <small>Atributo: <span class="scaling-grade grade-a">A</span> Técnica</small>
+              <div class="mt-3">
+                <small>Daño crítico</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 100%"></div></div>
+                <small>Alcance</small>
+                <div class="stat-bar"><div class="stat-fill" style="width: 35%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Tabla resumen -->
+        <h2 class="text-center mb-4">Tabla Comparativa</h2>
+        <div class="table-responsive">
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr style="color: var(--accent);">
+                <th>Arma</th>
+                <th>Tipo</th>
+                <th>Escalado</th>
+                <th>Daño Base</th>
+                <th>Especialidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Espada de Siete Resortes</td>
+                <td>Espada Larga</td>
+                <td><span class="scaling-grade grade-a">A</span> Técnica</td>
+                <td>105</td>
+                <td>Combo rápido</td>
+              </tr>
+              <tr>
+                <td>Hacha del Frenesí</td>
+                <td>Hacha Pesada</td>
+                <td><span class="scaling-grade grade-s">S</span> Motricidad</td>
+                <td>168</td>
+                <td>Quemadura</td>
+              </tr>
+              <tr>
+                <td>Espada del Trueno Real</td>
+                <td>Espada Larga</td>
+                <td><span class="scaling-grade grade-b">B</span> Mixto</td>
+                <td>120</td>
+                <td>Electricidad</td>
+              </tr>
+              <tr>
+                <td>Daga de la Mentira</td>
+                <td>Daga</td>
+                <td><span class="scaling-grade grade-a">A</span> Técnica</td>
+                <td>78</td>
+                <td>Críticos</td>
+              </tr>
+              <tr>
+                <td>Mazo de Krat</td>
+                <td>Maza Pesada</td>
+                <td><span class="scaling-grade grade-a">A</span> Motricidad</td>
+                <td>140</td>
+                <td>Rompe guardias</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Consejo final -->
+        <div class="alert alert-dark border border-secondary mt-5">
+          <h4 class="alert-heading">💡 Consejo del Maestro</h4>
+          <p class="mb-0">Las armas favoritas de la comunidad son aquellas que mezclan empuñaduras rápidas (como la del Estoque) con hojas pesadas (como la del Hacha). Experimenta en el <strong>Hotel Krat</strong> con el yunque para descubrir tu combinación ideal.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

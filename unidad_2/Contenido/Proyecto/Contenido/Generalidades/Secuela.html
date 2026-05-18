@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Secuela - Lies of P</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #00ff88;
+        --gold: #d4af37;
+        --purple: #712cf9;
+      }
+
+      body {
+        padding-top: 80px;
+        background-color: #0b0b0b;
+        color: #e0e0e0;
+        font-family: var(--font-body);
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: var(--font-titles);
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      .header-section {
+        background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.92)),
+                    url('../../4kp.jpeg');
+        background-size: cover;
+        background-position: center;
+        padding: 140px 0;
+        border-bottom: 2px solid var(--accent);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-section::before {
+        content: 'COMING SOON';
+        position: absolute;
+        top: 30px;
+        right: -50px;
+        background: var(--accent);
+        color: #000;
+        padding: 8px 60px;
+        transform: rotate(45deg);
+        font-family: var(--font-titles);
+        letter-spacing: 3px;
+        font-size: 0.85rem;
+        font-weight: bold;
+      }
+
+      .reveal-card {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 30px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        transition: 0.3s;
+      }
+      .reveal-card:hover {
+        border-color: var(--accent);
+        background: #1a1a1a;
+      }
+
+      .news-card {
+        background: linear-gradient(135deg, #1a1a1a, #1a2c1a);
+        border: 1px solid #333;
+        border-left: 4px solid var(--accent);
+        padding: 25px;
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 20px;
+        transition: 0.3s;
+      }
+      .news-card:hover {
+        border-color: var(--accent);
+        transform: translateX(5px);
+      }
+      .news-date {
+        display: inline-block;
+        color: var(--accent);
+        font-family: var(--font-titles);
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+
+      .theory-card {
+        background: linear-gradient(135deg, #1a1a1a, #2c1a3c);
+        border: 1px solid var(--purple);
+        padding: 25px;
+        border-radius: 12px;
+        height: 100%;
+      }
+      .theory-card h4 {
+        color: var(--purple);
+      }
+
+      .countdown {
+        text-align: center;
+        padding: 50px 30px;
+        background: linear-gradient(135deg, #0a1a0a, #1a0a2c);
+        border: 2px solid var(--accent);
+        border-radius: 20px;
+        margin: 40px 0;
+      }
+      .countdown-title {
+        font-family: var(--font-titles);
+        font-size: 2rem;
+        color: var(--accent);
+        letter-spacing: 4px;
+      }
+      .countdown-subtitle {
+        color: var(--gold);
+        font-style: italic;
+        margin-top: 10px;
+      }
+
+      .game-stats {
+        text-align: center;
+        padding: 20px;
+        background: #161616;
+        border: 1px solid #333;
+        border-radius: 12px;
+      }
+      .stat-big {
+        font-family: var(--font-titles);
+        font-size: 2.5rem;
+        background: linear-gradient(135deg, var(--accent), var(--gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .lore-quote {
+        font-style: italic;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 25px 35px;
+        background: rgba(0, 255, 136, 0.05);
+        border-left: 4px solid var(--accent);
+        border-right: 4px solid var(--accent);
+        margin: 30px 0;
+        color: #c0ffd6;
+      }
+
+      .roadmap-item {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 60px;
+      }
+      .roadmap-item::before {
+        content: counter(roadmap);
+        counter-increment: roadmap;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 35px;
+        height: 35px;
+        background: var(--accent);
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-titles);
+        font-weight: bold;
+      }
+      .roadmap {
+        counter-reset: roadmap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../content.html"><img src="../../logo.ico" style="width: 45px"></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="header-section text-center">
+        <div class="container">
+          <span style="color: var(--accent); font-family: var(--font-titles); letter-spacing: 4px;">EXTRAS</span>
+          <h1 class="display-1 fw-bold text-uppercase mt-3">Lies of P 2</h1>
+          <p class="lead">El futuro de Krat. Lo que sabemos sobre la confirmada secuela del aclamado souls-like coreano.</p>
+        </div>
+      </section>
+
+      <div class="container my-5">
+
+        <!-- Confirmación -->
+        <div class="countdown">
+          <div class="countdown-title">CONFIRMADA OFICIALMENTE</div>
+          <p class="countdown-subtitle mt-3">"La saga continuará."</p>
+          <p class="text-light mt-3">Round8 Studio y NEOWIZ han confirmado que Lies of P es solo el inicio de una <strong>saga planeada de varios títulos</strong>.</p>
+        </div>
+
+        <!-- Estadísticas del éxito -->
+        <h2 class="text-center mb-4">🏆 ¿Por Qué Habrá Secuela?</h2>
+        <p class="text-center text-secondary mb-4">El éxito del primer juego justificó completamente la inversión en la franquicia.</p>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-3">
+            <div class="game-stats">
+              <div class="stat-big">7M+</div>
+              <p class="mb-0">Copias vendidas</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="game-stats">
+              <div class="stat-big">81</div>
+              <p class="mb-0">Metacritic Score</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="game-stats">
+              <div class="stat-big">96%</div>
+              <p class="mb-0">Reseñas positivas</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="game-stats">
+              <div class="stat-big">5+</div>
+              <p class="mb-0">Premios ganados</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lore-quote">
+          "Lies of P se ha convertido en uno de los mayores éxitos de Corea del Sur en la industria de los videojuegos. Su impacto será duradero."
+          <br><br>
+          <small style="color: var(--accent);">— NEOWIZ Statement, 2024</small>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Lo que sabemos -->
+        <h2 class="mb-4">📰 Lo Que Sabemos Hasta Ahora</h2>
+
+        <div class="news-card">
+          <span class="news-date">SEPTIEMBRE 2024 · ANUNCIO</span>
+          <h4>Anuncio Oficial del Equipo</h4>
+          <p>El director Jiwon Choi confirmó en una entrevista que <strong>Round8 Studio está trabajando en la secuela</strong>. Además, reveló que el equipo ha planeado una saga de <strong>4 a 5 juegos</strong> dentro del universo de Krat.</p>
+        </div>
+
+        <div class="news-card">
+          <span class="news-date">DICIEMBRE 2024 · TEASER</span>
+          <h4>Escena Post-Créditos</h4>
+          <p>El final secreto de Lies of P (canonizado tras el DLC) muestra una escena que claramente prepara el camino para la secuela: <strong>una nueva ciudad, un nuevo protagonista, y la mención de un personaje familiar de los cuentos.</strong></p>
+          <p class="small text-secondary"><em>Spoiler: Se sugiere fuertemente que la próxima entrega adaptará el cuento del <strong>Mago de Oz</strong>.</em></p>
+        </div>
+
+        <div class="news-card">
+          <span class="news-date">2025 · PROYECTO PARALELO</span>
+          <h4>Game Awards Reveal</h4>
+          <p>Durante los Game Awards 2024, NEOWIZ confirmó que la saga Lies of P <strong>seguirá adaptando cuentos clásicos</strong> con un giro oscuro. Cada juego podría enfocarse en un cuento distinto.</p>
+        </div>
+
+        <div class="news-card">
+          <span class="news-date">ACTUALIDAD</span>
+          <h4>Desarrollo Activo</h4>
+          <p>Según declaraciones recientes, el equipo está <strong>activamente en desarrollo</strong> de la secuela. Se espera un primer teaser entre 2026-2027, con lanzamiento estimado para 2027-2028.</p>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Teorías -->
+        <h2 class="text-center mb-4">🔮 Teorías de la Comunidad</h2>
+        <p class="text-center text-secondary mb-4">Especulaciones basadas en pistas del juego y declaraciones del estudio.</p>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="theory-card">
+              <h4>👠 Tema: El Mago de Oz</h4>
+              <p>La escena secreta muestra zapatos rojos similares a los de Dorothy. Esto sugiere que la secuela podría ser una <strong>adaptación oscura del Mago de Oz</strong>, con Dorothy reemplazando a Pinocho como protagonista.</p>
+              <p class="small text-secondary">Probabilidad: <strong style="color: var(--accent);">Muy Alta</strong></p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="theory-card">
+              <h4>🌍 Ubicación: Nueva Ciudad</h4>
+              <p>El director ha dicho que <strong>cada juego de la saga tendrá una ciudad distinta</strong>, todas conectadas por el lore del Ergo. La próxima podría ser "Emerald City" o un equivalente.</p>
+              <p class="small text-secondary">Probabilidad: <strong style="color: var(--accent);">Alta</strong></p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="theory-card">
+              <h4>🤖 Compañeros Animales</h4>
+              <p>Si es Mago de Oz, podríamos tener compañeros como <strong>León Cobarde, Espantapájaros y Hombre de Hojalata</strong>, posiblemente con mecánicas de cooperación o invocación.</p>
+              <p class="small text-secondary">Probabilidad: <strong style="color: var(--accent);">Media-Alta</strong></p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="theory-card">
+              <h4>🎮 Combate Refinado</h4>
+              <p>Tras Overture, el equipo ha mostrado que están dispuestos a experimentar con el combate. Es muy probable que la secuela <strong>mejore aún más las mecánicas de parry</strong> y agregue nuevas opciones.</p>
+              <p class="small text-secondary">Probabilidad: <strong style="color: var(--accent);">Alta</strong></p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="theory-card">
+              <h4>🌀 Tema Recurrente</h4>
+              <p>"Mentiras" seguirá siendo central. En el Mago de Oz, el propio Mago es un <strong>charlatán</strong>: vive de mentiras. Esto encaja perfectamente con el tema de la saga.</p>
+              <p class="small text-secondary">Probabilidad: <strong style="color: var(--accent);">Alta</strong></p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="theory-card">
+              <h4>👥 Crossover</h4>
+              <p>Geppetto, P o Lea podrían aparecer como <strong>personajes secundarios</strong> en la secuela, creando un universo conectado al estilo Souls.</p>
+              <p class="small text-secondary">Probabilidad: <strong style="color: var(--accent);">Media</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Roadmap -->
+        <h2 class="text-center mb-4">🛣️ Roadmap Esperado</h2>
+        <div class="roadmap">
+          <div class="roadmap-item">
+            <h5 style="color: var(--gold);">2025 - DLC Overture</h5>
+            <p class="mb-0">Lanzado en septiembre 2025. Expande Lies of P con una precuela completa de 20 horas.</p>
+          </div>
+          <div class="roadmap-item">
+            <h5 style="color: var(--gold);">2026 - Primer Teaser</h5>
+            <p class="mb-0">Esperado en algún evento mayor (Game Awards, Summer Game Fest). Posiblemente un trailer cinemático corto.</p>
+          </div>
+          <div class="roadmap-item">
+            <h5 style="color: var(--gold);">2027 - Gameplay Reveal</h5>
+            <p class="mb-0">Primera muestra de gameplay y revelación oficial del título completo. Posible nombre tentativo de trabajo.</p>
+          </div>
+          <div class="roadmap-item">
+            <h5 style="color: var(--gold);">2028 - Lanzamiento</h5>
+            <p class="mb-0">Estimación realista del lanzamiento. Plataformas: PS5, Xbox Series, PC. Posible versión optimizada para Switch 2.</p>
+          </div>
+        </div>
+
+        <!-- Llamado a la acción -->
+        <div class="reveal-card mt-5 text-center">
+          <h3>📢 Mantente Informado</h3>
+          <p>Para no perderte ninguna actualización sobre la secuela, sigue los canales oficiales:</p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
+            <a href="https://www.liesofp.com/es-es" target="_blank" class="btn btn-outline-success">🌐 Sitio Oficial</a>
+            <a href="https://x.com/liesofp" target="_blank" class="btn btn-outline-success">🐦 X / Twitter</a>
+            <a href="https://www.youtube.com/channel/UCd66TUuXLdiOKAt2zpcSzPw" target="_blank" class="btn btn-outline-success">▶️ YouTube</a>
+            <a href="https://www.instagram.com/liesofp_official/" target="_blank" class="btn btn-outline-success">📷 Instagram</a>
+          </div>
+        </div>
+
+        <div class="lore-quote mt-5">
+          "La aventura de P fue solo el primer capítulo. La verdadera historia de Krat apenas comienza a desplegarse."
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

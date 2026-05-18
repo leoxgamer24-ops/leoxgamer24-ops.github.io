@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tips para el Jugador - Lies of P</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #712cf9;
+        --warning: #f0a500;
+        --danger: #ff4d6d;
+        --success: #4ecdc4;
+      }
+
+      body {
+        padding-top: 80px;
+        background-color: #0b0b0b;
+        color: #e0e0e0;
+        font-family: var(--font-body);
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: var(--font-titles);
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      .header-section {
+        background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('../../peleacircular.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 120px 0;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      .tip-card {
+        background: #161616;
+        border: 1px solid #333;
+        border-left: 4px solid var(--accent);
+        padding: 25px;
+        margin-bottom: 20px;
+        transition: 0.3s;
+        border-radius: 0 12px 12px 0;
+      }
+      .tip-card:hover {
+        background: #1a1a1a;
+        transform: translateX(5px);
+      }
+      .tip-card.warning { border-left-color: var(--warning); }
+      .tip-card.danger { border-left-color: var(--danger); }
+      .tip-card.success { border-left-color: var(--success); }
+
+      .tip-number {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        font-family: var(--font-titles);
+        font-weight: bold;
+        margin-right: 12px;
+      }
+      .tip-card.warning .tip-number { background: var(--warning); color: #000; }
+      .tip-card.danger .tip-number { background: var(--danger); }
+      .tip-card.success .tip-number { background: var(--success); color: #000; }
+
+      .category-pill {
+        display: inline-block;
+        background: rgba(113, 44, 249, 0.2);
+        color: var(--accent);
+        padding: 5px 14px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+        font-family: var(--font-titles);
+      }
+
+      .difficulty-badge {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+        border-radius: 50px;
+        margin-left: 8px;
+        background: #333;
+      }
+      .diff-easy { background: var(--success); color: #000; }
+      .diff-mid { background: var(--warning); color: #000; }
+      .diff-hard { background: var(--danger); color: #fff; }
+
+      .quote-box {
+        font-style: italic;
+        font-size: 1.3rem;
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(135deg, #1a1a1a, #2c1a3c);
+        border: 1px solid var(--accent);
+        border-radius: 15px;
+        color: #c0c0ff;
+        margin: 40px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../content.html"><img src="../../logo.ico" style="width: 45px"></a>
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="header-section text-center">
+        <div class="container">
+          <span class="category-pill">Generalidades</span>
+          <h1 class="display-2 fw-bold text-uppercase mt-3">Guía de Supervivencia</h1>
+          <p class="lead">15 consejos esenciales para sobrevivir en Krat. Desde principiantes hasta veteranos del souls-like.</p>
+        </div>
+      </section>
+
+      <div class="container my-5">
+
+        <div class="quote-box">
+          "Krat no perdona. Pero con paciencia, observación y un buen Parry, ninguna marioneta es invencible."
+        </div>
+
+        <!-- Sección Combate -->
+        <h2 class="mb-4">⚔️ Combate</h2>
+
+        <div class="tip-card">
+          <h4><span class="tip-number">01</span>Domina el Parry desde el inicio
+            <span class="difficulty-badge diff-easy">Esencial</span></h4>
+          <p>El bloqueo perfecto (parry) es la mecánica más importante del juego. No solo evita daño, sino que <strong>acumula aturdimiento</strong> en los jefes, permitiéndote golpes críticos devastadores.</p>
+          <p class="small text-secondary">💡 Practica en los enemigos básicos del Hotel Krat antes de enfrentar bosses.</p>
+        </div>
+
+        <div class="tip-card warning">
+          <h4><span class="tip-number">02</span>No esquives todo
+            <span class="difficulty-badge diff-mid">Intermedio</span></h4>
+          <p>Esquivar consume estamina y deja ventanas de vulnerabilidad. Aprende cuándo bloquear, cuándo hacer parry y cuándo esquivar. La <strong>guardia regular</strong> recupera vida si contraatacas rápido.</p>
+        </div>
+
+        <div class="tip-card">
+          <h4><span class="tip-number">03</span>Conoce a tu enemigo
+            <span class="difficulty-badge diff-easy">Esencial</span></h4>
+          <p>Cada marioneta tiene <strong>patrones de ataque memorizables</strong>. Observa al jefe en tus primeros intentos sin atacar, solo esquivando. Identifica sus combos, sus ventanas seguras y sus ataques cargados.</p>
+        </div>
+
+        <div class="tip-card danger">
+          <h4><span class="tip-number">04</span>Las marionetas humanizadas son peligrosas
+            <span class="difficulty-badge diff-hard">Avanzado</span></h4>
+          <p>Los enemigos que parecen humanos suelen tener movimientos impredecibles y ataques rápidos. <strong>Mantén distancia</strong> al inicio del combate para leer sus patrones.</p>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Sección Progresión -->
+        <h2 class="mb-4">📈 Progresión</h2>
+
+        <div class="tip-card success">
+          <h4><span class="tip-number">05</span>Sube Vitalidad temprano
+            <span class="difficulty-badge diff-easy">Esencial</span></h4>
+          <p>En las primeras 10 horas, prioriza subir <strong>Vitalidad</strong> hasta nivel 15-20. Más PS significa más errores permitidos mientras aprendes el juego.</p>
+        </div>
+
+        <div class="tip-card">
+          <h4><span class="tip-number">06</span>Decide tu build pronto
+            <span class="difficulty-badge diff-mid">Intermedio</span></h4>
+          <p>Después del primer jefe principal, elige entre <strong>Motricidad</strong> (fuerza bruta) o <strong>Técnica</strong> (rapidez y precisión). Difundir puntos te dejará débil en todos los frentes.</p>
+        </div>
+
+        <div class="tip-card warning">
+          <h4><span class="tip-number">07</span>No acumules Ergo
+            <span class="difficulty-badge diff-easy">Esencial</span></h4>
+          <p>El Ergo es como las almas en Dark Souls: si mueres, lo dejas caer. <strong>Gástalo siempre antes de explorar</strong> zonas nuevas o pelear contra jefes.</p>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Sección Exploración -->
+        <h2 class="mb-4">🗺️ Exploración</h2>
+
+        <div class="tip-card">
+          <h4><span class="tip-number">08</span>Explora cada esquina
+            <span class="difficulty-badge diff-easy">Esencial</span></h4>
+          <p>Krat esconde <strong>objetos clave en lugares aparentemente vacíos</strong>: detrás de cajas, en azoteas, en sótanos. Los Cuarzos para mejorar tu Órgano P están escondidos en rincones poco evidentes.</p>
+        </div>
+
+        <div class="tip-card success">
+          <h4><span class="tip-number">09</span>Habla con todos los NPCs
+            <span class="difficulty-badge diff-mid">Intermedio</span></h4>
+          <p>Cada conversación puede desbloquear misiones secundarias con recompensas únicas. Algunos NPCs como <strong>Polendina</strong> o <strong>Antonia</strong> te dan armas o quartz si los visitas en momentos específicos.</p>
+        </div>
+
+        <div class="tip-card">
+          <h4><span class="tip-number">10</span>Vuelve al Hotel Krat seguido
+            <span class="difficulty-badge diff-easy">Esencial</span></h4>
+          <p>El hotel es tu hub: ahí puedes mejorar armas, descansar, hablar con personajes, escuchar discos y, lo más importante, <strong>desbloquear cinemáticas únicas</strong>. Visítalo después de cada jefe.</p>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Sección Equipo -->
+        <h2 class="mb-4">🛡️ Equipo y Builds</h2>
+
+        <div class="tip-card warning">
+          <h4><span class="tip-number">11</span>Mejora una sola arma primero
+            <span class="difficulty-badge diff-mid">Intermedio</span></h4>
+          <p>Los materiales de mejora son escasos al inicio. Encuentra un arma que disfrutes y <strong>mejórala al máximo</strong> antes de cambiar. Mejor un arma +4 que cuatro armas +1.</p>
+        </div>
+
+        <div class="tip-card">
+          <h4><span class="tip-number">12</span>Cambia los brazos según el jefe
+            <span class="difficulty-badge diff-mid">Intermedio</span></h4>
+          <p>Cada brazo de Legión tiene utilidad situacional. <strong>Fulminis</strong> contra marionetas, <strong>Flamberge</strong> contra carcasas, <strong>Puppet String</strong> para arrastrar enemigos cerca.</p>
+        </div>
+
+        <div class="tip-card">
+          <h4><span class="tip-number">13</span>Equipa amuletos correctamente
+            <span class="difficulty-badge diff-mid">Intermedio</span></h4>
+          <p>Los amuletos son extremadamente poderosos pero <strong>requieren puntos de capacidad</strong>. Sube Capacidad al menos a 20 para equipar 3-4 amuletos simultáneamente.</p>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Sección Avanzado -->
+        <h2 class="mb-4">🔥 Tips Avanzados</h2>
+
+        <div class="tip-card danger">
+          <h4><span class="tip-number">14</span>Las mentiras importan
+            <span class="difficulty-badge diff-hard">Avanzado</span></h4>
+          <p>Las elecciones de diálogo afectan tu <strong>final del juego</strong> (hay 3 finales). Mentir por compasión te acerca a la humanidad; decir la verdad te mantiene como marioneta pura.</p>
+        </div>
+
+        <div class="tip-card success">
+          <h4><span class="tip-number">15</span>Acaricia a los gatos
+            <span class="difficulty-badge diff-easy">Esencial</span></h4>
+          <p>No es broma: <strong>interactuar con los gatos de Krat</strong> es necesario para algunos trofeos y eventos secretos. Además, conforme P se vuelve humano, su forma de tratarlos cambia visualmente.</p>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Errores comunes -->
+        <h2 class="text-center mb-4">❌ Errores Comunes que Debes Evitar</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="tip-card danger">
+              <h5>Subir todos los stats por igual</h5>
+              <p class="small mb-0">Genera un personaje débil en todos los aspectos. Especialízate.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tip-card danger">
+              <h5>Ignorar el peso del equipo</h5>
+              <p class="small mb-0">Pasar del 50% de carga reduce drásticamente la velocidad de esquive.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tip-card danger">
+              <h5>Olvidar usar Brazos de Legión</h5>
+              <p class="small mb-0">Son herramientas gratuitas con cooldown corto: úsalas siempre.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="tip-card danger">
+              <h5>Vender Quartz</h5>
+              <p class="small mb-0">NUNCA vendas los Cuarzos. Sirven para mejorar tu Órgano P y son irreemplazables.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cierre motivacional -->
+        <div class="quote-box mt-5">
+          "La paciencia es tu mayor arma. Krat castiga la prisa, pero recompensa al que aprende."
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

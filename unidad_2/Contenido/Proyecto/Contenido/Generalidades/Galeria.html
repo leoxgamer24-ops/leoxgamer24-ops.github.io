@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galería - Lies of P</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #f5a3ff;
+        --gold: #d4af37;
+        --purple: #712cf9;
+      }
+
+      body {
+        padding-top: 80px;
+        background-color: #0b0b0b;
+        color: #e0e0e0;
+        font-family: var(--font-body);
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: var(--font-titles);
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      .header-section {
+        background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.92)),
+                    url('../../charactersP.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 140px 0;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      /* Gallery filters */
+      .filter-bar {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .filter-btn {
+        background: transparent;
+        border: 1px solid var(--accent);
+        color: #e0e0e0;
+        padding: 8px 22px;
+        margin: 5px;
+        border-radius: 50px;
+        font-family: var(--font-titles);
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .filter-btn:hover, .filter-btn.active {
+        background: var(--accent);
+        color: #000;
+      }
+
+      /* Gallery grid */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        border: 1px solid #333;
+        background: #161616;
+        cursor: pointer;
+        transition: 0.3s;
+        aspect-ratio: 16/10;
+      }
+      .gallery-item:hover {
+        border-color: var(--accent);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(245, 163, 255, 0.2);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, transparent, rgba(0,0,0,0.95));
+        padding: 30px 20px 15px;
+        transform: translateY(40%);
+        transition: 0.3s;
+      }
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+      }
+      .gallery-title {
+        color: white;
+        font-family: var(--font-titles);
+        margin-bottom: 5px;
+        font-size: 1.05rem;
+      }
+      .gallery-category {
+        color: var(--accent);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      /* Featured large */
+      .featured-image {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .featured-image img {
+        height: 100%;
+      }
+
+      /* Modal effect for clicks */
+      .image-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+      .image-modal.active {
+        display: flex;
+      }
+      .image-modal img {
+        max-width: 90%;
+        max-height: 85vh;
+        border-radius: 15px;
+        border: 2px solid var(--accent);
+      }
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid var(--accent);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .category-badge {
+        display: inline-block;
+        background: rgba(245, 163, 255, 0.15);
+        color: var(--accent);
+        padding: 6px 18px;
+        border-radius: 20px;
+        font-family: var(--font-titles);
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+      }
+
+      .section-divider {
+        text-align: center;
+        margin: 60px 0 30px;
+      }
+      .section-divider h3 {
+        position: relative;
+        display: inline-block;
+        padding: 0 30px;
+        background: #0b0b0b;
+      }
+      .section-divider::before {
+        content: '';
+        display: block;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        position: relative;
+        top: 20px;
+      }
+
+      @media (max-width: 600px) {
+        .featured-image {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../content.html"><img src="../../logo.ico" style="width: 45px"></a>
+          
+          
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="header-section text-center">
+        <div class="container">
+          <span class="category-badge">Extras</span>
+          <h1 class="display-2 fw-bold text-uppercase mt-3">Galería Visual</h1>
+          <p class="lead">Capturas del juego, conceptos y arte oficial. La belleza oscura de Krat en imágenes.</p>
+        </div>
+      </section>
+
+      <div class="container my-5">
+
+        <!-- Personajes -->
+        <div class="section-divider">
+          <h3>👥 Personajes</h3>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item featured-image" onclick="openModal('../../personajesP.jpg')">
+            <img src="../../personajesP.jpg" alt="Personajes">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Personajes principales</div>
+              <div class="gallery-title">El elenco de Krat</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../charactersP.jpg')">
+            <img src="../../charactersP.jpg" alt="Personajes secundarios">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Aliados</div>
+              <div class="gallery-title">Hotel Krat</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../carloP.jpg')">
+            <img src="../../carloP.jpg" alt="Carlo">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Personaje misterioso</div>
+              <div class="gallery-title">Carlo</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('https://substackcdn.com/image/fetch/$s_!T0Kt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F16708870-511f-412e-b0d0-b2aa2b4cf906_3000x2000.jpeg')">
+            <img src="https://substackcdn.com/image/fetch/$s_!T0Kt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F16708870-511f-412e-b0d0-b2aa2b4cf906_3000x2000.jpeg" alt="Sophia">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Guía espiritual</div>
+              <div class="gallery-title">Sophia, el Hada Azul</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Combate -->
+        <div class="section-divider">
+          <h3>⚔️ Combate y Acción</h3>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" onclick="openModal('../../combate.jpg')">
+            <img src="../../combate.jpg" alt="Combate">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Combate</div>
+              <div class="gallery-title">El Frenesí de las Marionetas</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../peleacircular.jpg')">
+            <img src="../../peleacircular.jpg" alt="Pelea jefe">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Boss Fight</div>
+              <div class="gallery-title">Pelea Circular</div>
+            </div>
+          </div>
+
+          <div class="gallery-item featured-image" onclick="openModal('../../parryP.gif')">
+            <img src="../../parryP.gif" alt="Parry">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Mecánica</div>
+              <div class="gallery-title">Parry Perfecto en Acción</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('https://preview.redd.it/picking-a-combat-style-v0-nxjnzkj4ilof1.jpeg?width=1080&crop=smart&auto=webp&s=726f73be9ed6d016436f6472f0fa76b86b4a8202')">
+            <img src="https://preview.redd.it/picking-a-combat-style-v0-nxjnzkj4ilof1.jpeg?width=1080&crop=smart&auto=webp&s=726f73be9ed6d016436f6472f0fa76b86b4a8202" alt="Estilos de combate">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Gameplay</div>
+              <div class="gallery-title">Eligiendo Estilo</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../armasP.jpg')">
+            <img src="../../armasP.jpg" alt="Armas">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Arsenal</div>
+              <div class="gallery-title">Sistema de Armas</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mundo -->
+        <div class="section-divider">
+          <h3>🏛️ Mundo de Krat</h3>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item featured-image" onclick="openModal('https://images.squarespace-cdn.com/content/v1/613ef8a0a3de987d28d14431/12dd2342-bc33-44d1-8e30-1a764d8974a1/20230610102019_1.jpg')">
+            <img src="https://images.squarespace-cdn.com/content/v1/613ef8a0a3de987d28d14431/12dd2342-bc33-44d1-8e30-1a764d8974a1/20230610102019_1.jpg" alt="Krat City">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Locación</div>
+              <div class="gallery-title">Ciudad de Krat al amanecer</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../4kp.jpeg')">
+            <img src="../../4kp.jpeg" alt="P 4K">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Promocional</div>
+              <div class="gallery-title">P en alta resolución</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../psupercover.jpg')">
+            <img src="../../psupercover.jpg" alt="Cover">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Arte oficial</div>
+              <div class="gallery-title">Portada Oficial</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../Pcover.jpg')">
+            <img src="../../Pcover.jpg" alt="P cover">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Promocional</div>
+              <div class="gallery-title">Cartel de P</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('https://sm.ign.com/ign_nordic/gallery/l/lies-of-p-/lies-of-p-overture-screenshots_xkab.jpg')">
+            <img src="https://sm.ign.com/ign_nordic/gallery/l/lies-of-p-/lies-of-p-overture-screenshots_xkab.jpg" alt="Overture">
+            <div class="gallery-overlay">
+              <div class="gallery-category">DLC Overture</div>
+              <div class="gallery-title">Atmósfera Belle Époque</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promocional -->
+        <div class="section-divider">
+          <h3>🎨 Material Promocional</h3>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item featured-image" onclick="openModal('https://www.fantasymundo.com/wp-content/uploads/2024/11/Lies-of-P.jpg')">
+            <img src="https://www.fantasymundo.com/wp-content/uploads/2024/11/Lies-of-P.jpg" alt="Promocional">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Key Art</div>
+              <div class="gallery-title">Arte Conceptual Principal</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('https://cdn2.steamgriddb.com/hero_thumb/9fe5849fe5cd220919c9dceea883e42b.jpg')">
+            <img src="https://cdn2.steamgriddb.com/hero_thumb/9fe5849fe5cd220919c9dceea883e42b.jpg" alt="Banner">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Banner</div>
+              <div class="gallery-title">Hero Banner Oficial</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('https://www.gematsu.com/wp-content/uploads/2024/08/Lies-of-P-DLC_08-23-24.jpg')">
+            <img src="https://www.gematsu.com/wp-content/uploads/2024/08/Lies-of-P-DLC_08-23-24.jpg" alt="DLC promo">
+            <div class="gallery-overlay">
+              <div class="gallery-category">DLC</div>
+              <div class="gallery-title">Lies of P: Overture</div>
+            </div>
+          </div>
+
+          <div class="gallery-item" onclick="openModal('../../Pgif.gif')">
+            <img src="../../Pgif.gif" alt="P animation">
+            <div class="gallery-overlay">
+              <div class="gallery-category">Animación</div>
+              <div class="gallery-title">P en movimiento</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección de info final -->
+        <div class="mt-5 p-4 rounded" style="background: #161616; border: 1px solid #333;">
+          <h3 class="text-center">📷 Acerca de esta Galería</h3>
+          <p class="text-center mb-0">
+            Todas las imágenes son propiedad de <strong>Round8 Studio</strong> y <strong>NEOWIZ</strong>.
+            Esta galería es de uso académico y de fan, sin fines comerciales.
+            Para más imágenes oficiales, visita el
+            <a href="https://www.liesofp.com/es-es" target="_blank" style="color: var(--accent);">sitio oficial de Lies of P</a>.
+          </p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Modal de imagen -->
+    <div class="image-modal" id="imageModal" onclick="closeModal()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img id="modalImg" src="" alt="">
+    </div>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function openModal(src) {
+        document.getElementById('modalImg').src = src;
+        document.getElementById('imageModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        document.getElementById('imageModal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+      // Cerrar con tecla ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    </script>
+  </body>
+</html>

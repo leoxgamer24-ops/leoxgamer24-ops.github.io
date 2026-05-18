@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DLC Overture - Lies of P</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #ff6b6b;
+        --gold: #d4af37;
+        --purple: #712cf9;
+        --teal: #4ecdc4;
+      }
+
+      body {
+        padding-top: 80px;
+        background-color: #0b0b0b;
+        color: #e0e0e0;
+        font-family: var(--font-body);
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: var(--font-titles);
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      .header-section {
+        background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+                    url('https://www.gematsu.com/wp-content/uploads/2024/08/Lies-of-P-DLC_08-23-24.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 140px 0;
+        border-bottom: 2px solid var(--accent);
+        position: relative;
+      }
+
+      .header-section::after {
+        content: 'OVERTURE';
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-family: var(--font-titles);
+        font-size: 0.85rem;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 4px 12px;
+        letter-spacing: 3px;
+      }
+
+      .dlc-card {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 25px;
+        border-radius: 12px;
+        height: 100%;
+        transition: 0.3s;
+      }
+      .dlc-card:hover {
+        border-color: var(--accent);
+        background: #1a1a1a;
+        transform: translateY(-5px);
+      }
+      .dlc-card .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .feature-box {
+        background: linear-gradient(135deg, #1a1a1a, #2c1a1a);
+        border: 1px solid var(--accent);
+        padding: 30px;
+        border-radius: 15px;
+        margin: 30px 0;
+      }
+
+      .boss-card {
+        background: #161616;
+        border: 1px solid #333;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: 0.3s;
+      }
+      .boss-card:hover {
+        border-color: var(--accent);
+      }
+      .boss-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .boss-info {
+        padding: 20px;
+      }
+
+      .timeline-marker {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-family: var(--font-titles);
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+      }
+
+      .price-tag {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--gold), #b8860b);
+        color: #000;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-family: var(--font-titles);
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .platform-icon {
+        font-size: 1.8rem;
+        margin: 0 10px;
+        color: #888;
+        transition: 0.3s;
+      }
+      .platform-icon:hover {
+        color: var(--accent);
+        transform: scale(1.2);
+      }
+
+      .lore-quote {
+        font-style: italic;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 25px 35px;
+        background: rgba(255, 107, 107, 0.05);
+        border-left: 4px solid var(--accent);
+        border-right: 4px solid var(--accent);
+        margin: 30px 0;
+        color: #ffd6c0;
+      }
+
+      .release-card {
+        background: linear-gradient(135deg, #2c1a3c 0%, #1a1a3c 100%);
+        border: 2px solid var(--accent);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../content.html"><img src="../../logo.ico" style="width: 45px"></a>
+          
+          <div class="collapse navbar-collapse" id="navMain">
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="header-section text-center">
+        <div class="container">
+          <span class="timeline-marker">Extras</span>
+          <h1 class="display-2 fw-bold text-uppercase mt-3">Lies of P: Overture</h1>
+          <p class="lead">La expansión que precede a Krat. Una precuela donde descubrirás qué pasó <em>antes</em> de que P despertara.</p>
+        </div>
+      </section>
+
+      <div class="container my-5">
+
+        <!-- Sinopsis -->
+        <div class="row g-4 mb-5">
+          <div class="col-lg-6">
+            <h2>El Origen del Frenesí</h2>
+            <p class="lead">Overture es una <strong>precuela completa</strong> ambientada antes de los eventos del juego principal. Toma el rol de la Cazadora <strong>Lea</strong>, una guerrera enviada a Krat para investigar el inicio de la enfermedad de la Petrificación.</p>
+            <p>El DLC fue anunciado en septiembre 2024 y promete <strong>aproximadamente 20 horas de contenido</strong> nuevo: nuevos jefes, nuevas zonas, nuevas armas y una historia paralela que conecta directamente con el juego principal.</p>
+            <p>Round8 Studio y NEOWIZ confirmaron que <strong>Overture</strong> es completamente nuevo: no es DLC de relleno, sino una expansión narrativa importante.</p>
+          </div>
+          <div class="col-lg-6">
+            <img src="https://www.gematsu.com/wp-content/uploads/2024/08/Lies-of-P-DLC_08-23-24.jpg"
+                 class="img-fluid rounded shadow-lg border border-secondary" alt="Lies of P Overture">
+          </div>
+        </div>
+
+        <div class="lore-quote">
+          "Antes de las mentiras de P, hubo otra que se atrevió a hacer las preguntas correctas. Su nombre era Lea."
+        </div>
+
+        <!-- Información clave -->
+        <div class="feature-box">
+          <h2 class="text-center mb-4">⚔️ ¿Qué Trae el DLC?</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="dlc-card text-center">
+                <div class="feature-icon">🌍</div>
+                <h4>Nuevas Zonas</h4>
+                <p class="small">Explora distritos inéditos de Krat: el Distrito del Carnaval, la Calle Subterránea y el Antiguo Reino Profundo. Cada zona con biomas únicos.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dlc-card text-center">
+                <div class="feature-icon">⚔️</div>
+                <h4>10+ Nuevos Jefes</h4>
+                <p class="small">Lucha contra jefes únicos diseñados para Overture, incluyendo una <strong>Caza Salvaje</strong>, modo Bloodborne con velocidad agresiva.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dlc-card text-center">
+                <div class="feature-icon">🗡️</div>
+                <h4>Nuevas Armas</h4>
+                <p class="small">Más de <strong>30 armas inéditas</strong>: incluyendo armas de fuego (revólveres, escopetas) y las nuevas <em>"Hojas Especiales"</em>.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dlc-card text-center">
+                <div class="feature-icon">👤</div>
+                <h4>Nueva Protagonista</h4>
+                <p class="small">Juega como <strong>Lea</strong>, cazadora de la organización Cazadores. Estilo de juego más agresivo, enfocado en posicionamiento y combos.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dlc-card text-center">
+                <div class="feature-icon">🦋</div>
+                <h4>Hadas Compañeras</h4>
+                <p class="small">Sistema de invocación de <strong>hadas mecánicas</strong> que asisten en combate. Cada una con habilidades únicas.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="dlc-card text-center">
+                <div class="feature-icon">📖</div>
+                <h4>Lore Expandido</h4>
+                <p class="small">Descubre el origen real del <strong>Ergo</strong>, los Alquimistas y cómo Geppetto inició su obsesión por las marionetas perfectas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lea protagonista -->
+        <div class="row g-4 mb-5 align-items-center">
+          <div class="col-lg-5">
+            <img src="../../personajesP.jpg" class="img-fluid rounded shadow-lg" alt="Lea">
+          </div>
+          <div class="col-lg-7">
+            <h2>Lea, la Cazadora</h2>
+            <p>A diferencia de P, Lea es una <strong>humana</strong> entrenada en la caza. Su estilo de combate refleja eso:</p>
+            <ul>
+              <li><strong>Velocidad superior:</strong> esquives más largos, ataques más rápidos.</li>
+              <li><strong>Armas duales:</strong> puede equipar dos armas simultáneamente (una en cada mano).</li>
+              <li><strong>Arcabuz integrado:</strong> sustituye el brazo de Legión por un arma de fuego para ataques a distancia.</li>
+              <li><strong>Hadas mecánicas:</strong> compañeras que se invocan en combate.</li>
+            </ul>
+            <p>Esta nueva mecánica acerca Overture al estilo de <em>Bloodborne</em>, con un combate más frenético y ofensivo.</p>
+          </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Nuevos Jefes Destacados -->
+        <h2 class="text-center mb-4">🦴 Jefes Destacados</h2>
+        <div class="row g-4 mb-5">
+          <div class="col-md-6 col-lg-4">
+            <div class="boss-card">
+              <img src="../../peleacircular.jpg" class="boss-img" alt="Boss 1">
+              <div class="boss-info">
+                <h4>The Twin Marquise</h4>
+                <p class="small">Hermanas gemelas mecánicas. Pelean en sincronía perfecta. Una de las batallas más difíciles del DLC.</p>
+                <small style="color: var(--accent);">⚡ Daño eléctrico</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="boss-card">
+              <img src="../../carloP.jpg" class="boss-img" alt="Boss 2">
+              <div class="boss-info">
+                <h4>The Two-Faced Carnival</h4>
+                <p class="small">Maestro del carnaval con dos personalidades. Cambia su moveset según la fase. Ambiente surrealista.</p>
+                <small style="color: var(--accent);">🎭 Múltiples fases</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="boss-card">
+              <img src="../../charactersP.jpg" class="boss-img" alt="Boss 3">
+              <div class="boss-info">
+                <h4>The Wild Hunt Leader</h4>
+                <p class="small">Versión Lies of P de la Caza Salvaje. Combate ultrarrápido al estilo Bloodborne. Solo para veteranos.</p>
+                <small style="color: var(--accent);">💀 Combate definitivo</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5 border-secondary">
+
+        <!-- Conexión con la historia principal -->
+        <div class="row mb-5">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-center mb-4">🔗 Conexión con Lies of P</h2>
+            <div class="dlc-card">
+              <p>Overture <strong>responde preguntas cruciales</strong> del juego principal:</p>
+              <ul>
+                <li>¿Quién creó las primeras marionetas y por qué Geppetto las "perfeccionó"?</li>
+                <li>¿Cuál es el verdadero origen del Ergo y por qué es tan codiciado?</li>
+                <li>¿Cómo se relacionan los Alquimistas con la Hermandad del Conejo Negro?</li>
+                <li>¿Qué pasó con la verdadera familia de Geppetto antes del Frenesí?</li>
+                <li>¿Quién fue la "primera mentira"?</li>
+              </ul>
+              <p class="mb-0">Los eventos del DLC ocurren <strong>aproximadamente 30 años antes</strong> del juego principal, y algunos personajes aparecen jóvenes (como Geppetto y Simon Manus).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card de lanzamiento -->
+        <div class="release-card">
+          <h2 style="color: var(--gold);">📅 Información de Lanzamiento</h2>
+          <p class="lead mt-3">Lies of P: Overture se lanzó el <strong>21 de septiembre de 2025</strong></p>
+          <div class="my-4">
+            <span class="price-tag">$29.99 USD</span>
+          </div>
+          <h5 class="text-light mt-4">Disponible en:</h5>
+          <div class="my-3">
+            <i class="platform-icon fab fa-playstation" title="PlayStation"></i>
+            <i class="platform-icon fab fa-xbox" title="Xbox"></i>
+            <i class="platform-icon fab fa-steam" title="Steam"></i>
+            <i class="platform-icon fab fa-windows" title="PC"></i>
+            <span class="platform-icon" title="Game Pass">🎮</span>
+          </div>
+          <p class="small text-secondary mt-3">Requiere el juego base. Incluido en Xbox Game Pass desde el día de lanzamiento.</p>
+        </div>
+
+        <!-- Cita final -->
+        <div class="lore-quote mt-5">
+          "Si Lies of P fue una sinfonía, Overture es la obertura que la precede: misteriosa, oscura y absolutamente necesaria para entender el todo."
+          <br><br>
+          <small style="color: var(--accent);">— Round8 Studio</small>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </body>
+</html>

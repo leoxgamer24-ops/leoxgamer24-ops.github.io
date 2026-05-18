@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progreso del Juego - Lies of P</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #00d4ff;
+        --gold: #d4af37;
+        --purple: #712cf9;
+      }
+
+      body {
+        padding-top: 80px;
+        background-color: #0b0b0b;
+        color: #e0e0e0;
+        font-family: var(--font-body);
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: var(--font-titles);
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      .header-section {
+        background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.92)), url('../../psupercover.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 120px 0;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 40px;
+        margin-top: 40px;
+      }
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 12px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, var(--accent), var(--purple));
+      }
+      .timeline-item {
+        position: relative;
+        margin-bottom: 40px;
+        padding: 20px 25px;
+        background: #161616;
+        border: 1px solid #333;
+        border-radius: 12px;
+        transition: 0.3s;
+      }
+      .timeline-item:hover {
+        border-color: var(--accent);
+        background: #1a1a1a;
+      }
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -34px;
+        top: 25px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 3px solid #0b0b0b;
+        box-shadow: 0 0 15px var(--accent);
+      }
+
+      .chapter-num {
+        display: inline-block;
+        font-family: var(--font-titles);
+        font-size: 0.85rem;
+        background: rgba(0, 212, 255, 0.15);
+        color: var(--accent);
+        padding: 4px 14px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+
+      .boss-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--purple), #ff4d6d);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-family: var(--font-titles);
+        margin: 5px 5px 5px 0;
+      }
+
+      .difficulty-meter {
+        display: inline-flex;
+        gap: 3px;
+        margin-left: 10px;
+      }
+      .skull {
+        font-size: 0.9rem;
+      }
+      .skull.active { filter: none; }
+      .skull.inactive { opacity: 0.2; }
+
+      .reward-card {
+        background: rgba(212, 175, 55, 0.08);
+        border: 1px solid var(--gold);
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-top: 12px;
+      }
+      .reward-card strong { color: var(--gold); }
+
+      .stats-card {
+        background: linear-gradient(135deg, #1a1a1a, #1a2a3c);
+        border: 1px solid var(--accent);
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .big-number {
+        font-family: var(--font-titles);
+        font-size: 3rem;
+        background: linear-gradient(135deg, var(--accent), var(--purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../content.html"><img src="../../logo.ico" style="width: 45px"></a>
+         
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="header-section text-center">
+        <div class="container">
+          <span class="chapter-num">Sobre el Juego</span>
+          <h1 class="display-2 fw-bold text-uppercase mt-3">El Viaje de P</h1>
+          <p class="lead">Recorrido cronológico por los 12 capítulos de Lies of P. Desde la Estación Krat hasta las profundidades del Coliseo.</p>
+        </div>
+      </section>
+
+      <div class="container my-5">
+
+        <!-- Estadísticas generales -->
+        <div class="row g-4 mb-5">
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="big-number">12</div>
+              <p class="mb-0">Capítulos</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="big-number">28</div>
+              <p class="mb-0">Jefes</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="big-number">35h</div>
+              <p class="mb-0">Duración</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-card">
+              <div class="big-number">3</div>
+              <p class="mb-0">Finales</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-secondary mb-5">⚠️ La siguiente sección contiene <strong>spoilers menores</strong> sobre la estructura del juego. No se revelan giros narrativos.</p>
+
+        <!-- Timeline de capítulos -->
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 01</span>
+            <h3>Estación Krat</h3>
+            <p>P despierta en la estación abandonada. Una niña misteriosa lo guía hacia el Hotel Krat. Aquí aprendes los conceptos básicos: ataque, esquive y guardia.</p>
+            <span class="boss-badge">⚔️ Jefe: Mad Donkey</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull inactive">💀</span>
+              <span class="skull inactive">💀</span>
+              <span class="skull inactive">💀</span>
+              <span class="skull inactive">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Empuñadura del Estoque · Acceso al Hotel Krat
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 02</span>
+            <h3>Calle Krat</h3>
+            <p>Exploras las calles infestadas de marionetas defectuosas. Conoces al inspector y descubres la magnitud del Frenesí de las Marionetas. Primer encuentro con el Parry.</p>
+            <span class="boss-badge">⚔️ Scrapped Watchman</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull inactive">💀</span>
+              <span class="skull inactive">💀</span>
+              <span class="skull inactive">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Brazo Aegis · Ergo del jefe (arma craftable)
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 03</span>
+            <h3>Hotel Krat</h3>
+            <p>Capítulo de descanso narrativo. Conoces a Geppetto, Sophia, Antonia y Polendina. Aprendes a mejorar armas, asignar puntos y usar el Órgano P.</p>
+            <span class="boss-badge">📖 Sin jefe principal</span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Sistema de mejoras · Primer Cuarzo · Discos de gramófono
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 04</span>
+            <h3>Fábrica de Marionetas</h3>
+            <p>Adentrate en la fábrica donde se ensamblan las marionetas. Ambiente industrial, plataformas y trampas. Aquí se complica el juego.</p>
+            <span class="boss-badge">⚔️ King's Flame, Fuoco</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull inactive">💀</span>
+              <span class="skull inactive">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Hacha del Frenesí · Resistencia al fuego
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 05</span>
+            <h3>Catedral de San Frangelico</h3>
+            <p>Ambientes góticos con monjes mutados y carcasas. Se introduce el sistema de Carcasas y enemigos que requieren ataques fatales para morir.</p>
+            <span class="boss-badge">⚔️ Fallen Archbishop Andreus</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull inactive">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Acceso a la zona "Pantano Malum"
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 06</span>
+            <h3>Pantano Malum</h3>
+            <p>Una de las zonas más memorables: pantano envenenado con barricadas y enemigos en grupo. Aparición de los <strong>Stalkers</strong>, asesinos rápidos y peligrosos.</p>
+            <span class="boss-badge">⚔️ Black Rabbit Brotherhood</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull inactive">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Brazo Falcon Eyes · Anillo de Estaminacida
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 07</span>
+            <h3>Parque de Diversiones Krat</h3>
+            <p>Capítulo psicológicamente perturbador: parque de atracciones abandonado con marionetas-payaso. Atmósfera cargada de horror grotesco.</p>
+            <span class="boss-badge">⚔️ Puppet of the Future</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull inactive">💀</span>
+              <span class="skull inactive">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Visión del futuro de Krat
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 08</span>
+            <h3>Distrito Estrella</h3>
+            <p>El distrito más rico de Krat, ahora devastado. Mansiones aristocráticas y un encuentro inesperado con un personaje crucial para la trama.</p>
+            <span class="boss-badge">⚔️ Champion Victor</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull inactive">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Espada Real · Llave del Distrito
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 09</span>
+            <h3>Cima de la Torre Krat</h3>
+            <p>Comienza el endgame. Atmósfera melancólica y revelaciones importantes. Geppetto te abre la verdad sobre tu origen.</p>
+            <span class="boss-badge">⚔️ Green Monster of the Swamp</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Esencia de Humanidad · Acceso al endgame
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 10</span>
+            <h3>Plaza de Arche</h3>
+            <p>Las calles principales de Krat colapsadas. Combate constante con marionetas de élite. Una sucesión vertiginosa de mini-jefes prepara para el clímax.</p>
+            <span class="boss-badge">⚔️ Laxasia the Complete</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Espada de Laxasia · Resistencia eléctrica
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 11</span>
+            <h3>El Coliseo Antiguo</h3>
+            <p>El penúltimo nivel: ruinas subterráneas con la verdad sobre la civilización de Krat. Atmósfera surreal y poética.</p>
+            <span class="boss-badge">⚔️ Simon Manus, Awakened God</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Verdad sobre el Ergo · Decisión moral final
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <span class="chapter-num">Capítulo 12</span>
+            <h3>Final · El Despertar</h3>
+            <p>El desenlace. Tres finales posibles según tus decisiones a lo largo del juego. Una pelea final inolvidable que define qué tipo de ser elige P ser.</p>
+            <span class="boss-badge">⚔️ Nameless Puppet</span>
+            <span class="difficulty-meter">
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+              <span class="skull active">💀</span>
+            </span>
+            <div class="reward-card">
+              <strong>🎁 Recompensa:</strong> Final del juego + acceso al NG+ y modo Coliseo
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Finales -->
+        <h2 class="text-center mt-5 mb-4">🎭 Los Tres Finales</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="stats-card">
+              <h4 style="color: var(--gold);">Real Boy</h4>
+              <p class="small">P se vuelve completamente humano. El final más cálido y emocional. Requiere mentir cuando es necesario y mostrar compasión.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stats-card">
+              <h4 style="color: #ff6b6b;">Rise of P</h4>
+              <p class="small">P se mantiene como marioneta y toma el liderazgo. Final ambiguo y maduro. Requiere honrar la palabra de Geppetto.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stats-card">
+              <h4 style="color: var(--purple);">Free from the Puppet String</h4>
+              <p class="small">El final secreto. Solo se desbloquea con condiciones específicas en el último capítulo. Final amargo pero liberador.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-dark border border-secondary mt-5">
+          <h4 class="alert-heading">🏆 Modo Coliseo</h4>
+          <p class="mb-0">Tras completar el juego principal, se desbloquea el modo Coliseo: arena de jefes con modificadores. Perfecto para probar builds y obtener trofeos avanzados.</p>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
