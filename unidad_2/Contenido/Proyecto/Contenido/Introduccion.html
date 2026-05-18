@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introducción - Lies of P</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbit&display=swap" rel="stylesheet">
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --font-titles: 'Cinzel', serif;
+        --font-body: 'Orbit', sans-serif;
+        --accent: #712cf9;
+        --accent-light: #a366ff;
+        --gold: #d4af37;
+        --gold-bright: #ffd700;
+        --crimson: #b51e3c;
+      }
+
+      body {
+        padding-top: 80px;
+        background-color: #0b0b0b;
+        color: #e0e0e0;
+        font-family: var(--font-body);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-titles);
+        color: var(--accent);
+        letter-spacing: 1px;
+      }
+
+      /* HERO */
+      .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(11,11,11,0.95)),
+                    url('intro-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 180px 0 100px;
+        border-bottom: 3px solid var(--accent);
+        text-align: center;
+        position: relative;
+      }
+      .hero-section::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(180deg, transparent, #0b0b0b);
+      }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(113, 44, 249, 0.2);
+        border: 1px solid var(--accent);
+        color: var(--accent-light);
+        padding: 8px 22px;
+        border-radius: 50px;
+        font-family: var(--font-titles);
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+      }
+      .hero-title {
+        font-size: 4.5rem;
+        background: linear-gradient(135deg, #ffffff, #d4af37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+      .hero-subtitle {
+        font-size: 1.3rem;
+        color: #d0d0e0;
+        max-width: 750px;
+        margin: 0 auto;
+      }
+
+      /* CARDS PRINCIPALES */
+      .info-card {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 30px;
+        border-radius: 12px;
+        height: 100%;
+        transition: 0.3s;
+      }
+      .info-card:hover {
+        border-color: var(--accent);
+        background: #1a1a1a;
+        transform: translateY(-5px);
+      }
+      .info-card .icon-big {
+        font-size: 3rem;
+        margin-bottom: 15px;
+      }
+
+      /* FICHA TÉCNICA */
+      .ficha-tecnica {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2c1a3c 100%);
+        border: 2px solid var(--accent);
+        padding: 40px;
+        border-radius: 20px;
+      }
+      .ficha-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #333;
+      }
+      .ficha-row:last-child {
+        border-bottom: none;
+      }
+      .ficha-label {
+        font-family: var(--font-titles);
+        color: var(--gold);
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+      .ficha-value {
+        color: #e0e0e0;
+        text-align: right;
+      }
+
+      /* QUOTE */
+      .pull-quote {
+        font-style: italic;
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 40px 50px;
+        background: linear-gradient(135deg, rgba(113, 44, 249, 0.08), rgba(212, 175, 55, 0.05));
+        border-left: 5px solid var(--accent);
+        border-right: 5px solid var(--gold);
+        color: #d8d8f0;
+        margin: 40px 0;
+        border-radius: 10px;
+      }
+      .pull-quote .quote-mark {
+        font-size: 3rem;
+        color: var(--gold);
+        display: block;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      /* STATS */
+      .stat-circle {
+        text-align: center;
+        padding: 20px;
+      }
+      .stat-number {
+        font-family: var(--font-titles);
+        font-size: 3.5rem;
+        background: linear-gradient(135deg, var(--accent-light), var(--gold));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .stat-label {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        color: #b0b0c0;
+      }
+
+      /* FEATURES */
+      .feature-item {
+        background: #161616;
+        border-left: 4px solid var(--accent);
+        padding: 20px 25px;
+        margin-bottom: 15px;
+        border-radius: 0 12px 12px 0;
+        transition: 0.3s;
+      }
+      .feature-item:hover {
+        background: #1a1a1a;
+        transform: translateX(5px);
+        border-left-color: var(--gold);
+      }
+      .feature-item h4 {
+        margin-bottom: 8px;
+      }
+
+      /* RECEPCIÓN */
+      .review-card {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 20px;
+        border-radius: 12px;
+        height: 100%;
+        text-align: center;
+        transition: 0.3s;
+      }
+      .review-card:hover {
+        border-color: var(--gold);
+      }
+      .review-score {
+        font-family: var(--font-titles);
+        font-size: 3rem;
+        color: var(--gold-bright);
+        line-height: 1;
+      }
+      .review-source {
+        color: #b0b0c0;
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+
+      /* PREMIOS */
+      .award-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--gold), #b8860b);
+        color: #1a1a1a;
+        padding: 12px 25px;
+        border-radius: 50px;
+        margin: 5px;
+        font-family: var(--font-titles);
+        font-size: 0.9rem;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      }
+
+      /* PLATFORMS */
+      .platform-card {
+        background: #161616;
+        border: 1px solid #333;
+        padding: 25px 15px;
+        border-radius: 12px;
+        text-align: center;
+        transition: 0.3s;
+      }
+      .platform-card:hover {
+        border-color: var(--accent);
+        background: #1a1a1a;
+      }
+      .platform-name {
+        font-family: var(--font-titles);
+        color: var(--accent-light);
+        margin-top: 10px;
+      }
+
+      /* SECCIONES NAVEGACIÓN */
+      .section-nav-card {
+        background: linear-gradient(135deg, #161616 0%, #1a1a2c 100%);
+        border: 1px solid #333;
+        padding: 25px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+        transition: 0.3s;
+      }
+      .section-nav-card:hover {
+        border-color: var(--accent);
+        background: linear-gradient(135deg, #1a1a1a 0%, #2c1a3c 100%);
+        transform: translateY(-3px);
+        color: inherit;
+      }
+      .section-nav-card .nav-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      /* DIVIDER */
+      .scroll-divider {
+        text-align: center;
+        margin: 60px 0 40px;
+        position: relative;
+      }
+      .scroll-divider h2 {
+        display: inline-block;
+        padding: 0 30px;
+        background: #0b0b0b;
+        position: relative;
+        z-index: 1;
+      }
+      .scroll-divider::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      }
+
+      /* GENRE TAGS */
+      .genre-tag {
+        display: inline-block;
+        background: rgba(113, 44, 249, 0.15);
+        color: var(--accent-light);
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        margin: 4px;
+        border: 1px solid rgba(113, 44, 249, 0.3);
+      }
+
+      /* CTA */
+      .cta-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2c1a3c 100%);
+        border: 2px solid var(--gold);
+        padding: 50px;
+        border-radius: 20px;
+        text-align: center;
+        margin: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html"><img src="../logo.ico" style="width: 45px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navMain">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="content.html">Contenido</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#">Introducción</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero-section">
+        <div class="container">
+          <span class="hero-badge">— INTRODUCCIÓN —</span>
+          <h1 class="hero-title">LIES OF P</h1>
+          <p class="hero-subtitle">
+            Un souls-like de pesadilla inspirado en el cuento clásico de Pinocho.
+            Adéntrate en la ciudad de Krat, donde las marionetas se han rebelado
+            y el destino de la humanidad pende de una mentira.
+          </p>
+          <div class="mt-4">
+            <span class="genre-tag">Souls-like</span>
+            <span class="genre-tag">RPG de Acción</span>
+            <span class="genre-tag">Belle Époque</span>
+            <span class="genre-tag">Oscuro</span>
+            <span class="genre-tag">Single Player</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="container my-5">
+
+        <!-- QUOTE INICIAL -->
+        <div class="pull-quote">
+          <span class="quote-mark">"</span>
+          Quizás todas las marionetas comparten un sueño:
+          el sueño de ser real. Pero, ¿qué es ser real?
+          <br><br>
+          <small style="color: var(--accent-light);">— Sophia, el Hada Azul</small>
+        </div>
+
+        <!-- ¿QUÉ ES LIES OF P? -->
+        <div class="scroll-divider">
+          <h2>¿Qué es Lies of P?</h2>
+        </div>
+
+        <div class="row g-4 align-items-center mb-5">
+          <div class="col-lg-7">
+            <p class="lead">
+              <strong style="color: var(--gold);">Lies of P</strong> es un videojuego de
+              acción y rol de tipo <em>souls-like</em> desarrollado por el estudio surcoreano
+              <strong>Round8 Studio</strong> y publicado por <strong>NEOWIZ</strong> en
+              septiembre de 2023.
+            </p>
+            <p>
+              Inspirado libremente en la novela <em>"Las aventuras de Pinocho"</em> de
+              Carlo Collodi, el juego presenta una reinterpretación oscura y madura de la
+              historia clásica. Pero en lugar de un niño de madera que sueña con ser real,
+              controlas a <strong>P</strong>, una marioneta mecánica avanzada que despierta
+              en una ciudad devastada y debe descubrir su propósito.
+            </p>
+            <p>
+              Ambientado en la ciudad ficticia de <strong style="color: var(--accent-light);">
+              Krat</strong>, una metrópolis al estilo Belle Époque consumida por una
+              misteriosa enfermedad y la rebelión de sus propias marionetas, el juego mezcla
+              combate desafiante, una narrativa profunda y elecciones morales que afectan el
+              destino del protagonista.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <img src="intro-hero.jpg" class="img-fluid rounded shadow-lg border border-secondary" alt="Lies of P">
+          </div>
+        </div>
+
+        <!-- ESTADÍSTICAS RÁPIDAS -->
+        <div class="row g-4 my-5">
+          <div class="col-md-3 col-6">
+            <div class="stat-circle">
+              <div class="stat-number">7M+</div>
+              <div class="stat-label">Copias vendidas</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-circle">
+              <div class="stat-number">81</div>
+              <div class="stat-label">Metacritic</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-circle">
+              <div class="stat-number">35h</div>
+              <div class="stat-label">Duración promedio</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="stat-circle">
+              <div class="stat-number">96%</div>
+              <div class="stat-label">Reseñas positivas</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LA PREMISA -->
+        <div class="scroll-divider">
+          <h2>La Premisa</h2>
+        </div>
+
+        <div class="info-card mb-4">
+          <p class="lead">
+            <strong style="color: var(--accent-light);">Despiertas en una estación de tren abandonada.</strong>
+            Una niña misteriosa te llama por tu nombre: <strong>P</strong>. Te dice que tu creador,
+            <strong>Geppetto</strong>, te necesita.
+          </p>
+          <p>
+            Krat ha caído. Las marionetas, antes serviciales y obedientes, se han vuelto
+            asesinas. La <strong>Petrificación</strong>, una enfermedad implacable, transforma
+            a los humanos en estatuas de piedra. Los pocos sobrevivientes se refugian en el
+            <strong>Hotel Krat</strong>.
+          </p>
+          <p>
+            Tu misión es simple en apariencia pero llena de complicaciones morales:
+            <strong style="color: var(--gold);">encontrar a Geppetto y salvar Krat</strong>.
+            Pero a medida que avanzas, descubrirás que las leyes que gobiernan a las marionetas
+            tienen una grieta: <em>tú puedes mentir</em>. Y cada mentira te acerca un paso más
+            a la humanidad... o te aleja de ella para siempre.
+          </p>
+        </div>
+
+        <!-- CARACTERÍSTICAS PRINCIPALES -->
+        <div class="scroll-divider">
+          <h2>Características Principales</h2>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="info-card">
+              <div class="icon-big">⚔️</div>
+              <h4>Combate Implacable</h4>
+              <p>
+                Sistema de combate al estilo Bloodborne y Sekiro: rápido, agresivo y
+                con una fuerte dependencia del <strong>Parry perfecto</strong>. Cada
+                error se paga caro, pero cada victoria sabe a gloria.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-card">
+              <div class="icon-big">🔧</div>
+              <h4>Ensamblaje de Armas</h4>
+              <p>
+                Las armas se dividen en <strong>hoja</strong> y <strong>empuñadura</strong>.
+                Combina cualquier hoja con cualquier empuñadura para crear armas únicas
+                adaptadas a tu estilo. Más de <strong>30 armas base</strong> y
+                <strong>13 armas legendarias</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-card">
+              <div class="icon-big">🦾</div>
+              <h4>Brazos de Legión</h4>
+              <p>
+                Tu brazo izquierdo es modular. Puedes equipar diferentes
+                <strong>brazos mecánicos</strong> con habilidades únicas: lanzallamas,
+                ácido, electricidad, ganchos, escudos explosivos y mucho más.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-card">
+              <div class="icon-big">🎭</div>
+              <h4>Sistema de Mentiras</h4>
+              <p>
+                Una mecánica única en el género: tus decisiones de diálogo
+                <strong>cambian la historia</strong>. Mentir te acerca a la humanidad,
+                pero también puede tener consecuencias trágicas. <strong>3 finales</strong>
+                distintos te esperan.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-card">
+              <div class="icon-big">🏛️</div>
+              <h4>Atmósfera Belle Époque</h4>
+              <p>
+                Una estética visual única que mezcla la elegancia europea del siglo XIX
+                con horror gótico. Calles iluminadas con gas, catedrales decadentes,
+                fábricas industriales y mansiones aristocráticas en ruinas.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-card">
+              <div class="icon-big">🎼</div>
+              <h4>Banda Sonora Memorable</h4>
+              <p>
+                Música original de <strong>Yeashin Kim</strong> que mezcla composiciones
+                orquestales con piezas vocales de ópera. Cada jefe tiene su propio tema
+                inolvidable. Los discos de vinilo coleccionables forman parte de la trama.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FICHA TÉCNICA -->
+        <div class="scroll-divider">
+          <h2>Ficha Técnica</h2>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-lg-6">
+            <div class="ficha-tecnica">
+              <h3 class="text-center mb-4" style="color: var(--gold);">Información del Juego</h3>
+              <div class="ficha-row">
+                <span class="ficha-label">Título</span>
+                <span class="ficha-value">Lies of P</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">Desarrollador</span>
+                <span class="ficha-value">Round8 Studio</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">Distribuidor</span>
+                <span class="ficha-value">NEOWIZ</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">Director</span>
+                <span class="ficha-value">Jiwon Choi</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">Lanzamiento</span>
+                <span class="ficha-value">19 Sept. 2023</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">DLC Overture</span>
+                <span class="ficha-value">21 Sept. 2025</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">Motor</span>
+                <span class="ficha-value">Unreal Engine 4</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">Modo de juego</span>
+                <span class="ficha-value">Un jugador</span>
+              </div>
+              <div class="ficha-row">
+                <span class="ficha-label">Clasificación</span>
+                <span class="ficha-value">M (Maduro 17+)</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ficha-tecnica">
+              <h3 class="text-center mb-4" style="color: var(--gold);">Plataformas Disponibles</h3>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="platform-card">
+                    <div style="font-size: 2.5rem;">🎮</div>
+                    <div class="platform-name">PlayStation 5</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="platform-card">
+                    <div style="font-size: 2.5rem;">🎮</div>
+                    <div class="platform-name">PlayStation 4</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="platform-card">
+                    <div style="font-size: 2.5rem;">🎮</div>
+                    <div class="platform-name">Xbox Series X|S</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="platform-card">
+                    <div style="font-size: 2.5rem;">🎮</div>
+                    <div class="platform-name">Xbox One</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="platform-card">
+                    <div style="font-size: 2.5rem;">💻</div>
+                    <div class="platform-name">PC (Steam)</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="platform-card">
+                    <div style="font-size: 2.5rem;">☁️</div>
+                    <div class="platform-name">Game Pass</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INSPIRACIONES -->
+        <div class="scroll-divider">
+          <h2>Inspiraciones y Referencias</h2>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-4">
+            <div class="feature-item">
+              <h4>📖 Pinocho de Carlo Collodi</h4>
+              <p class="mb-0 small">
+                La inspiración narrativa principal. P es una versión madura del
+                personaje clásico que busca convertirse en humano.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-item">
+              <h4>🩸 Bloodborne</h4>
+              <p class="mb-0 small">
+                Influencia directa en el combate agresivo, la atmósfera victoriana
+                y el horror cósmico subyacente.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-item">
+              <h4>⚔️ Sekiro</h4>
+              <p class="mb-0 small">
+                La mecánica del Parry perfecto y el sistema de aturdimiento están
+                claramente inspirados en el aclamado juego de FromSoftware.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-item">
+              <h4>🗡️ Dark Souls</h4>
+              <p class="mb-0 small">
+                El esqueleto del género souls-like: hogueras, recuperación de almas
+                tras la muerte, jefes desafiantes y exploración interconectada.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-item">
+              <h4>🏛️ Belle Époque Europea</h4>
+              <p class="mb-0 small">
+                Referencias arquitectónicas y culturales del período 1871-1914
+                en París, Londres y Viena.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-item">
+              <h4>🤖 Steampunk</h4>
+              <p class="mb-0 small">
+                Estética visual con engranajes, mecanismos de relojería, gas
+                steampunk y autómatas victorianos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECEPCIÓN CRÍTICA -->
+        <div class="scroll-divider">
+          <h2>Recepción de la Crítica</h2>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-3 col-6">
+            <div class="review-card">
+              <div class="review-score">9/10</div>
+              <div class="review-source">IGN</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="review-card">
+              <div class="review-score">8.5</div>
+              <div class="review-source">GameSpot</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="review-card">
+              <div class="review-score">81</div>
+              <div class="review-source">Metacritic</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="review-card">
+              <div class="review-score">9.2</div>
+              <div class="review-source">3DJuegos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <span class="quote-mark">"</span>
+          Lies of P es la sorpresa souls-like del año. No solo iguala a sus inspiraciones,
+          sino que las supera en muchos aspectos. Una obra maestra coreana.
+          <br><br>
+          <small style="color: var(--accent-light);">— Reseña promedio de la crítica</small>
+        </div>
+
+        <!-- PREMIOS -->
+        <div class="scroll-divider">
+          <h2>🏆 Premios y Reconocimientos</h2>
+        </div>
+
+        <div class="text-center my-5">
+          <span class="award-badge">🏆 Mejor RPG · The Game Awards 2023 (Nominado)</span>
+          <span class="award-badge">⭐ Juego del Año · Korean Game Awards 2023</span>
+          <span class="award-badge">🎮 Mejor Souls-like · 2023</span>
+          <span class="award-badge">🎭 Mejor Narrativa · NEOWIZ Awards</span>
+          <span class="award-badge">🎨 Mejor Dirección Artística · 2023</span>
+          <span class="award-badge">🎼 Mejor Banda Sonora · Multiple</span>
+        </div>
+
+        <!-- EXPLORA EL CONTENIDO -->
+        <div class="scroll-divider">
+          <h2>Explora el Mundo de Krat</h2>
+        </div>
+
+        <p class="text-center text-secondary mb-4">
+          Esta página es solo el comienzo. Profundiza en cada aspecto del juego:
+        </p>
+
+        <div class="row g-3 mb-5">
+          <div class="col-md-4">
+            <a href="Generalidades/CombateContenido.html" class="section-nav-card">
+              <div class="nav-icon">⚔️</div>
+              <h5>Combate</h5>
+              <p class="small mb-0 text-secondary">Domina el Parry y el sistema de armas.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/SistemaArmas.html" class="section-nav-card">
+              <div class="nav-icon">🗡️</div>
+              <h5>Sistema de Armas</h5>
+              <p class="small mb-0 text-secondary">Ensamblaje, escalado y armas legendarias.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/Tips.html" class="section-nav-card">
+              <div class="nav-icon">💡</div>
+              <h5>Tips para el Jugador</h5>
+              <p class="small mb-0 text-secondary">15 consejos esenciales para sobrevivir.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/Progreso.html" class="section-nav-card">
+              <div class="nav-icon">👤</div>
+              <h5>Desarrollo del Personaje</h5>
+              <p class="small mb-0 text-secondary">Atributos, humanidad y mentiras.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/ProgresoJuego.html" class="section-nav-card">
+              <div class="nav-icon">📜</div>
+              <h5>Progreso del Juego</h5>
+              <p class="small mb-0 text-secondary">Los 12 capítulos y sus jefes.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/HistoriaKrat.html" class="section-nav-card">
+              <div class="nav-icon">🏛️</div>
+              <h5>Historia de Krat</h5>
+              <p class="small mb-0 text-secondary">La caída de la ciudad y sus distritos.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/DLC.html" class="section-nav-card">
+              <div class="nav-icon">🎭</div>
+              <h5>DLC Overture</h5>
+              <p class="small mb-0 text-secondary">La precuela oficial del juego.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/Secuela.html" class="section-nav-card">
+              <div class="nav-icon">🔮</div>
+              <h5>La Secuela</h5>
+              <p class="small mb-0 text-secondary">El futuro confirmado de la saga.</p>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="Generalidades/Galeria.html" class="section-nav-card">
+              <div class="nav-icon">📸</div>
+              <h5>Galería</h5>
+              <p class="small mb-0 text-secondary">Capturas, conceptos y arte oficial.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="cta-section">
+          <h2 style="color: var(--gold);">¿Listo para Mentir?</h2>
+          <p class="lead mt-3">
+            Adéntrate en el mundo completo de Lies of P. Recorre Krat, conoce a sus
+            personajes, domina cada arma y descubre todos los secretos.
+          </p>
+          <div class="mt-4">
+            <a href="content.html" class="btn btn-lg" style="background: linear-gradient(135deg, var(--accent), var(--gold)); color: white; padding: 12px 35px; border-radius: 50px; font-family: var(--font-titles);">
+              📖 EXPLORAR EL CONTENIDO COMPLETO
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="container py-4 text-center border-top border-secondary">
+      <p class="text-secondary" style="font-family: var(--font-titles);">&copy; 2026 Leonardo Soto Adame · UPSLP</p>
+    </footer>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
