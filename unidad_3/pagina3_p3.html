@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Formulario Completo UPSLP</title>
+</head>
+<body>
+<script>
+       if(!confirm('Para acceder al sitio debes aceptar las cookies...')){
+           window.location = 'http://google.com.mx';
+       }
+</script>
+<form class="form-horizontal" id="frmBase">
+<fieldset>
+<legend>FORMULARIOS WEB</legend>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Nombre">Nombre completo</label>  
+<div class="col-md-4">
+<input id="Nombre" name="Nombre" type="text" placeholder="UPSLP" class="form-control input-md">
+<span class="help-block">Comenzando por los apellidos</span>  
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="numero">Numero telefonico</label>
+<div class="col-md-4">
+<div class="input-group">
+<span class="input-group-addon">+52</span>
+<input id="numero" name="numero" class="form-control" placeholder="(444) 123 4567" type="text">
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Correo">Correo Electrónico</label>
+<div class="col-md-4">
+<div class="input-group">
+<input id="Correo" name="Correo" class="form-control" placeholder="" type="text">
+<span class="input-group-addon">@upslp.edu.mx</span>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Password">Contraseña</label>
+<div class="col-md-4">
+<input id="Password" name="Password" type="password" placeholder="*******" class="form-control input-md">
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Domicilio">Domicilio</label>  
+<div class="col-md-5">
+<input id="Domicilio" name="Domicilio" type="text" placeholder="" class="form-control input-md">
+</div>
+</div>
+<br>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Boton"></label>
+<div class="col-md-4">
+<button type="button" id="Boton" name="Boton" onclick="mostrarDatos()" class="btn btn-default">Enviar</button>
+</div>
+</div>
+</fieldset>
+</form>
+<hr>
+
+<fieldset onmouseover="ratonIn(this)" onmouseout="ratonOut(this)">
+<legend>Figuras</legend>
+<label>Selecciona la figura:</label>
+<select id="tipoFigura">
+<option value="0">Opción</option>
+<option value="1">Triángulo</option>
+<option value="2">Cuadro</option>
+<option value="3">Círculo</option>
+</select>
+<br>
+<label>Dame el valor del dato:</label>
+<input type="number" id="valorDato" placeholder="Valor"><br>
+<input type="button" value="Calcular" onclick="calcula()"><br>
+<label>Resultado:</label>
+<input type="number" id="valorResultado" placeholder="Resultado" readonly>
+</fieldset>
+<script>
+       document.body.style.backgroundColor = 'crimson';
+       if(document.getElementById("frmBase")){
+           document.getElementById("frmBase").style.backgroundColor = 'steelblue';
+       }
+       function mostrarDatos(){
+           let objNombre = document.getElementById("Nombre");
+           let objnumero = document.getElementById("numero");
+           let objCorreo = document.getElementById("Correo");
+           let objPassword = document.getElementById("Password");
+           let objDomicilio = document.getElementById("Domicilio");
+           let regexNombre = /^[A-Z a-záéíóúÁÉÍÓÚñÑ]+$/;
+           let regexCorreo = /^[0-9]{6}$/;
+           let regexNumero = /^[0-9]{10}$/;
+           let bandNombre = regexNombre.test(objNombre.value);
+           let bandCorreo = validaFormato(regexCorreo, objCorreo.value);
+           let bandNumero = validaFormato(regexNumero, objnumero.value);
+           alert(`Resultado de la validación: \n\tNombre: ${bandNombre} \n\tCorreo: ${bandCorreo} \n\tNumero: ${bandNumero}`);
+           let strMensaje = ">>> Información capturada <<<";
+           strMensaje += "\n - Nombre : " + objNombre.value;
+           strMensaje += "\n - Telefono : (+52) " + objnumero.value;
+           strMensaje += "\n - Correo: " + objCorreo.value + "@upslp.edu.mx";
+           strMensaje += "\n - Contraseña: " + objPassword.value;
+           strMensaje += "\n - Domicilio: " + objDomicilio.value;
+           alert(strMensaje);
+       }
+       function validaFormato(patron, cadena){
+           return patron.test(cadena);
+       }
+       // Función para cambiar el estilo cuando el cursor pasa por encima de un elemento (image_4.png)
+       function ratonIn(element) {
+           element.style.color = "#ad42f5";
+           element.style.backgroundColor = "#4287f5";
+       }
+       // Función para cambiar el estilo cuando el cursor sale de un elemento (image_4.png)
+       function ratonOut(element) {
+           element.style.color = "#000000";
+           element.style.backgroundColor = "#ffffff";
+       }
+       function calcula() {
+           const tipo = document.getElementById("tipoFigura").value;
+           const dato = parseFloat(document.getElementById("valorDato").value);
+           const inputResultado = document.getElementById("valorResultado");
+           let resultado = 0;
+           if (isNaN(dato)) {
+               alert("Por favor, ingresa un número válido.");
+               return;
+           }
+           switch(tipo) {
+               case "1":
+                   resultado = (dato * dato) / 2;
+                   break;
+               case "2": 
+                   resultado = dato * dato;
+                   break;
+               case "3": 
+                   resultado = Math.PI * Math.pow(dato, 2);
+                   break;
+               default:
+                   alert("Selecciona una figura válida.");
+                   return;
+           }
+           inputResultado.value = resultado.toFixed(2);
+       }
+</script>
+</body>
+</html>

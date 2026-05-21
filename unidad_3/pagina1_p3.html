@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Formulario Completo UPSLP</title>
+</head>
+<body>
+<script>
+       if(!confirm('Para acceder al sitio debes aceptar las cookies...')){
+           window.location = 'http://google.com.mx';
+       }
+</script>
+<form class="form-horizontal" id="frmBase">
+<fieldset>
+<legend>FORMULARIOS WEB</legend>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Nombre">Nombre completo</label>  
+<div class="col-md-4">
+<input id="Nombre" name="Nombre" type="text" placeholder="UPSLP" class="form-control input-md">
+<span class="help-block">Comenzando por los apellidos</span>  
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="numero">Numero telefonico</label>
+<div class="col-md-4">
+<div class="input-group">
+<span class="input-group-addon">+52</span>
+<input id="numero" name="numero" class="form-control" placeholder="(444) 123 4567" type="text">
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Correo">Correo Electrónico</label>
+<div class="col-md-4">
+<div class="input-group">
+<input id="Correo" name="Correo" class="form-control" placeholder="" type="text">
+<span class="input-group-addon">@upslp.edu.mx</span>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Password">Contraseña</label>
+<div class="col-md-4">
+<input id="Password" name="Password" type="password" placeholder="*******" class="form-control input-md">
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Domicilio">Domicilio</label>  
+<div class="col-md-5">
+<input id="Domicilio" name="Domicilio" type="text" placeholder="" class="form-control input-md">
+</div>
+</div>
+<br>
+<div class="form-group">
+<label class="col-md-4 control-label" for="Boton"></label>
+<div class="col-md-4">
+<button type="button" id="Boton" name="Boton" onclick="mostrarDatos()" class="btn btn-default">Enviar</button>
+</div>
+</div>
+</fieldset>
+</form>
+<hr>
+
+
+</body>
+</html>
