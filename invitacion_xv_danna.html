@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Danna - Pool Party</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            /* Inspirado en la arena y el agua de las imágenes de referencia */
+            background-color: #fdf5e6;
+            background-image: 
+                radial-gradient(circle at top left, rgba(135, 206, 235, 0.4), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(255, 182, 193, 0.4), transparent 50%),
+                url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            max-width: 420px;
+            width: 90%;
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            margin: 20px;
+        }
+        
+        /* Olas decorativas de fondo en la tarjeta */
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(135, 206, 235, 0.2);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .invitation-card::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 105, 180, 0.15);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .decor-top {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+        
+        h1.pool-party {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ff1493; /* Rosa vibrante similar a la imagen 1 */
+            margin: 0;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        .age {
+            font-size: 6rem;
+            font-weight: 700;
+            color: rgba(255, 105, 180, 0.2); /* Rosa translúcido de fondo */
+            margin: -30px 0 -45px 0;
+            font-family: 'Dancing Script', cursive;
+            line-height: 1;
+        }
+        
+        h2.name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: #ff1493;
+            margin: 0 0 20px 0;
+            line-height: 1;
+            text-shadow: 2px 2px 5px rgba(255, 20, 147, 0.2);
+        }
+        
+        .intro-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .details-container {
+            margin-top: 20px;
+            padding-top: 25px;
+            border-top: 2px dashed #ffb6c1;
+        }
+        
+        .detail-item {
+            margin-bottom: 22px;
+        }
+        
+        .detail-title {
+            font-size: 0.9rem;
+            color: #ff1493;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        
+        .detail-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .address {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .footer-note {
+            margin-top: 35px;
+            font-size: 1.1rem;
+            color: #ff1493;
+            font-weight: 600;
+            background-color: rgba(255, 182, 193, 0.2);
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .decor-bottom {
+            font-size: 2rem;
+            margin-top: 25px;
+            letter-spacing: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="content">
+            <!-- Emojis inspirados en flores de hibisco, cocos y bola disco -->
+            <div class="decor-top">🪩 🌺 🥥</div>
+            
+            <h1 class="pool-party">Pool Party</h1>
+            <div class="age">XV</div>
+            <h2 class="name">Danna</h2>
+            
+            <p class="intro-text">
+                ¡Prepara tu mejor outfit de alberca y ven a celebrar este día tan especial conmigo!
+            </p>
+            
+            <div class="details-container">
+                <div class="detail-item">
+                    <div class="detail-title">Save The Date</div>
+                    <div class="detail-text">Viernes, 3 de Julio de 2026</div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-title">Lugar</div>
+                    <div class="detail-text">Hacienda los Arcos<br><span style="font-weight: 400; font-size: 1rem;">Salón 3</span></div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-title">Ubicación</div>
+                    <div class="address">
+                        <strong>Rafael Nieto #165, Col. Tierra Blanca</strong><br>
+                        <span style="font-size: 0.85rem; color: #777;">(Pasando la gasolinera, antes de llegar al Hospital del Niño y la Mujer)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mensaje inspirado en la imagen 1 -->
+            <div class="footer-note">
+                🌊 ¡No olvides tu traje de baño y toalla! 👙
+            </div>
+            
+            <!-- Emojis inspirados en conchas, estrellas de mar y perlas (imágenes 2 y 3) -->
+            <div class="decor-bottom">🐚 ⭐ 🦪</div>
+        </div>
+    </div>
+</body>
+</html>
